@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chittoor District Police | Election Portal</title>
+
+<title>Chittoor District Police - Election Portal</title>
 
 <style>
 * {
@@ -21,59 +22,53 @@ body {
 header {
   background: linear-gradient(120deg, #092c55, #176b91);
   color: white;
-  padding: 28px 15px;
   text-align: center;
-  box-shadow: 0 4px 15px #0002;
+  padding: 28px 15px;
 }
 
 header h1 {
   margin: 0;
   font-size: clamp(23px, 4vw, 34px);
-  letter-spacing: 1px;
 }
 
 header h2 {
-  margin: 10px 0 0;
-  font-size: 19px;
-  font-weight: 600;
+  margin: 10px 0;
+  font-size: 20px;
 }
 
 header p {
   margin: 12px 0 0;
   font-size: 14px;
-  letter-spacing: .4px;
 }
 
 .container {
   width: min(1120px, 94%);
-  margin: 28px auto 45px;
+  margin: 28px auto 40px;
 }
 
 .search-area {
   max-width: 500px;
-  margin: 0 auto 24px;
+  margin: 0 auto 20px;
 }
 
 #searchInput {
   width: 100%;
-  padding: 14px 17px;
+  padding: 14px 16px;
   border: 1px solid #d7dfeb;
   border-radius: 9px;
   font-size: 15px;
   outline: none;
-  box-shadow: 0 3px 12px #17375e0d;
 }
 
 #searchInput:focus {
   border-color: #2475b9;
-  box-shadow: 0 0 0 3px #2475b922;
 }
 
 .folder-count {
   text-align: center;
   color: #52677e;
-  font-size: 14px;
   margin-bottom: 22px;
+  font-size: 14px;
 }
 
 .folder-grid {
@@ -84,52 +79,31 @@ header p {
 
 .folder-card {
   background: white;
+  border: 1px solid #dce4ef;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #dce4ef;
   box-shadow: 0 5px 15px #17375e0b;
   transition: transform .2s, box-shadow .2s;
 }
 
 .folder-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px #17375e19;
+  transform: translateY(-3px);
+  box-shadow: 0 9px 20px #17375e18;
 }
 
 .folder-banner {
   height: 108px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
-}
-
-.folder-banner::before,
-.folder-banner::after {
-  content: "";
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: #ffffff12;
-}
-
-.folder-banner::before {
-  top: -80px;
-  right: -20px;
-}
-
-.folder-banner::after {
-  bottom: -115px;
-  left: -25px;
 }
 
 .folder-number {
   position: absolute;
   top: 13px;
   left: 13px;
-  z-index: 1;
   color: white;
   font-size: 11px;
   font-weight: bold;
@@ -138,8 +112,6 @@ header p {
 
 .folder-emoji {
   font-size: 43px;
-  z-index: 1;
-  filter: drop-shadow(0 3px 3px #0002);
 }
 
 .folder-content {
@@ -147,7 +119,7 @@ header p {
 }
 
 .folder-content h3 {
-  margin: 0 0 19px;
+  margin: 0 0 18px;
   font-size: 14px;
   line-height: 1.5;
   min-height: 21px;
@@ -162,14 +134,13 @@ header p {
   text-decoration: none;
   font-size: 11px;
   font-weight: bold;
-  letter-spacing: .3px;
 }
 
 .open-folder:hover {
   color: #d27b00;
 }
 
-.open-folder span:last-child {
+.open-folder .arrow {
   font-size: 18px;
 }
 
@@ -204,10 +175,6 @@ footer {
   .folder-grid {
     grid-template-columns: 1fr;
   }
-
-  .folder-banner {
-    height: 100px;
-  }
 }
 </style>
 </head>
@@ -227,8 +194,7 @@ footer {
       type="search"
       id="searchInput"
       placeholder="🔎 Search folders by name..."
-      aria-label="Search folders"
-    >
+      aria-label="Search folders">
   </div>
 
   <div class="folder-count">
@@ -245,8 +211,8 @@ footer {
       </div>
       <div class="folder-content">
         <h3>1. L &amp; O DSRs</h3>
-        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
-          OPEN FOLDER <span>↗</span>
+        <a class="open-folder" href="PASTE_FOLDER_01_URL_HERE" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span class="arrow">↗</span>
         </a>
       </div>
     </article>
@@ -259,8 +225,8 @@ footer {
       </div>
       <div class="folder-content">
         <h3>2. Annexure A, B &amp; C - Seizures DSRs</h3>
-        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
-          OPEN FOLDER <span>↗</span>
+        <a class="open-folder" href="PASTE_FOLDER_02_URL_HERE" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span class="arrow">↗</span>
         </a>
       </div>
     </article>
@@ -273,8 +239,8 @@ footer {
       </div>
       <div class="folder-content">
         <h3>3. BB SCHEMES</h3>
-        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
-          OPEN FOLDER <span>↗</span>
+        <a class="open-folder" href="PASTE_FOLDER_03_URL_HERE" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span class="arrow">↗</span>
         </a>
       </div>
     </article>
@@ -287,8 +253,8 @@ footer {
       </div>
       <div class="folder-content">
         <h3>4. ELECTION PETITIONS &amp; REPLIES</h3>
-        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
-          OPEN FOLDER <span>↗</span>
+        <a class="open-folder" href="PASTE_FOLDER_04_URL_HERE" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span class="arrow">↗</span>
         </a>
       </div>
     </article>
@@ -301,8 +267,8 @@ footer {
       </div>
       <div class="folder-content">
         <h3>5. NOMINATIONS</h3>
-        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
-          OPEN FOLDER <span>↗</span>
+        <a class="open-folder" href="PASTE_FOLDER_05_URL_HERE" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span class="arrow">↗</span>
         </a>
       </div>
     </article>
@@ -315,8 +281,8 @@ footer {
       </div>
       <div class="folder-content">
         <h3>6. ELECTION MEMOS &amp; REPLIES</h3>
-        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
-          OPEN FOLDER <span>↗</span>
+        <a class="open-folder" href="PASTE_FOLDER_06_URL_HERE" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span class="arrow">↗</span>
         </a>
       </div>
     </article>
@@ -329,8 +295,8 @@ footer {
       </div>
       <div class="folder-content">
         <h3>7. PAPER CLIPPINGS</h3>
-        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
-          OPEN FOLDER <span>↗</span>
+        <a class="open-folder" href="PASTE_FOLDER_07_URL_HERE" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span class="arrow">↗</span>
         </a>
       </div>
     </article>
@@ -343,8 +309,8 @@ footer {
       </div>
       <div class="folder-content">
         <h3>8. PHOTOS &amp; VIDEOS</h3>
-        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
-          OPEN FOLDER <span>↗</span>
+        <a class="open-folder" href="PASTE_FOLDER_08_URL_HERE" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span class="arrow">↗</span>
         </a>
       </div>
     </article>
@@ -357,22 +323,22 @@ footer {
       </div>
       <div class="folder-content">
         <h3>9. GOOGLE DRIVE LINKS</h3>
-        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
-          OPEN FOLDER <span>↗</span>
+        <a class="open-folder" href="PASTE_FOLDER_09_URL_HERE" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span class="arrow">↗</span>
         </a>
       </div>
     </article>
 
-    <!-- FOLDER 10: REPLACE TITLE AND LINK -->
+    <!-- FOLDER 10 -->
     <article class="folder-card">
       <div class="folder-banner" style="background:linear-gradient(120deg,#21694b,#58a77a)">
         <span class="folder-number">FOLDER 10</span>
         <span class="folder-emoji">📣</span>
       </div>
       <div class="folder-content">
-        <h3>10. REPLACE WITH EXISTING FOLDER 10 NAME</h3>
-        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
-          OPEN FOLDER <span>↗</span>
+        <h3>10. ELECTION NOTIFICATION</h3>
+        <a class="open-folder" href="PASTE_FOLDER_10_URL_HERE" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span class="arrow">↗</span>
         </a>
       </div>
     </article>
@@ -390,7 +356,7 @@ footer {
           href="https://drive.google.com/drive/folders/1A_GcugwV5ywgEQTZPdyPjU81t6FRitGi?usp=sharing"
           target="_blank"
           rel="noopener noreferrer">
-          OPEN FOLDER <span>↗</span>
+          OPEN FOLDER <span class="arrow">↗</span>
         </a>
       </div>
     </article>
@@ -408,9 +374,7 @@ footer {
 
 <script>
 const searchInput = document.getElementById("searchInput");
-const folderCards = Array.from(
-  document.querySelectorAll(".folder-card")
-);
+const folderCards = Array.from(document.querySelectorAll(".folder-card"));
 const totalFolders = document.getElementById("totalFolders");
 const noResults = document.getElementById("noResults");
 
@@ -423,7 +387,6 @@ searchInput.addEventListener("input", function () {
   folderCards.forEach(function (card) {
     const matches = card.textContent.toLowerCase().includes(query);
     card.classList.toggle("hidden", !matches);
-
     if (matches) visibleCount++;
   });
 
