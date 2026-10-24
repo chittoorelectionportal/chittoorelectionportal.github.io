@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,26 +8,30 @@
 
 <style>
 :root {
-  --navy: #09275b;
+  --navy: #08275b;
   --blue: #0866c5;
   --gold: #ffc928;
   --ink: #102653;
-  --muted: #50668d;
-  --page: #edf5ff;
+  --muted: #5b6e8f;
+  --page: #f2f7ff;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(ellipse at 10% 25%, #d5e8ff 0, transparent 36%),
-    radial-gradient(ellipse at 95% 70%, #dcecff 0, transparent 35%),
-    #f2f7ff;
+    radial-gradient(ellipse at 8% 18%, #d9eaff 0, transparent 34%),
+    radial-gradient(ellipse at 94% 70%, #e2edff 0, transparent 32%),
+    var(--page);
 }
 
 header {
@@ -36,22 +39,23 @@ header {
   overflow: hidden;
   text-align: center;
   color: white;
-  padding: 20px 15px 22px;
+  padding: 30px 16px 29px;
   background:
-    radial-gradient(ellipse at 5% 100%, #075ca9 0, transparent 42%),
-    radial-gradient(ellipse at 100% 0%, #126fc0 0, transparent 45%),
+    radial-gradient(ellipse at 8% 100%, #0872c7 0, transparent 42%),
+    radial-gradient(ellipse at 100% 0%, #145fa9 0, transparent 42%),
     linear-gradient(120deg, #07346c, #061b48 65%, #064b91);
   border-bottom: 5px solid var(--gold);
+  box-shadow: 0 8px 26px #08275b20;
 }
 
 header::before,
 header::after {
   content: "";
   position: absolute;
+  width: 42%;
   height: 180px;
-  width: 40%;
   top: -100px;
-  border: 2px solid #f9c52e;
+  border: 2px solid #f9c52e70;
   border-radius: 50%;
   transform: rotate(20deg);
   pointer-events: none;
@@ -86,29 +90,32 @@ h1 {
   font-weight: 900;
   margin: 0;
   letter-spacing: 1px;
+  text-wrap: balance;
 }
 
 .election-label {
   display: inline-block;
-  background: linear-gradient(90deg, #ffbd25, #ffe47c);
+  background: linear-gradient(100deg, #ffbd25, #ffe47c);
   color: #082b62;
   font-size: clamp(13px, 2vw, 21px);
   font-weight: 900;
-  padding: 6px 26px;
+  padding: 8px 26px;
   border-radius: 25px;
-  margin: 10px 0 8px;
+  margin: 12px 0 8px;
+  box-shadow: 0 4px 12px #00000020;
 }
 
 .header-links {
   font-size: 13px;
   font-weight: 700;
-  margin: 3px 0 0;
+  margin: 4px 0 0;
+  color: #e9f3ff;
 }
 
 main {
   max-width: 1650px;
   margin: auto;
-  padding: 18px 25px 35px;
+  padding: 24px 25px 38px;
 }
 
 .intro {
@@ -118,14 +125,16 @@ main {
 
 .intro h2 {
   font-size: clamp(22px, 2.5vw, 31px);
-  margin: 0 0 5px;
+  margin: 0 0 7px;
   font-weight: 900;
+  color: #09285e;
 }
 
 .intro p {
   font-size: 15px;
   color: var(--muted);
   margin: 0;
+  line-height: 1.6;
 }
 
 .tools {
@@ -133,15 +142,19 @@ main {
   justify-content: center;
   align-items: center;
   gap: 14px;
-  margin: 18px auto 22px;
+  margin: 20px auto 25px;
   flex-wrap: wrap;
 }
 
 .main-folder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   background: linear-gradient(100deg, #ffbd26, #ffe16c);
   color: #09285e;
-  border-radius: 10px;
+  border: 1px solid #f0bc2f;
+  border-radius: 12px;
   padding: 15px 23px;
   font-size: 14px;
   font-weight: 900;
@@ -159,7 +172,7 @@ main {
   width: min(390px, 100%);
   background: white;
   border: 1px solid #d5e2f4;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px #234b7810;
 }
@@ -169,18 +182,25 @@ main {
   min-width: 0;
   border: 0;
   outline: 0;
-  padding: 13px 14px;
+  padding: 14px;
   font-size: 14px;
   background: transparent;
   color: var(--ink);
 }
 
+.search-box:focus-within {
+  border-color: #3b82d0;
+  box-shadow: 0 0 0 3px #0866c51a;
+}
+
 .search-symbol {
+  display: flex;
+  align-items: center;
   background: linear-gradient(135deg, #0876db, #064da4);
   color: white;
   border: 0;
   padding: 0 18px;
-  font-size: 19px;
+  font-size: 22px;
 }
 
 .grid {
@@ -193,22 +213,35 @@ main {
   --accent: #0866c5;
   --accent2: #064da4;
   --pale: #e2f0ff;
+
   position: relative;
   overflow: hidden;
   background: #fff;
   border: 1px solid #dce8f7;
   border-radius: 18px;
-  padding: 17px 15px 13px;
+  padding: 18px 15px 14px;
   min-width: 0;
   display: flex;
   flex-direction: column;
   box-shadow: 0 7px 20px #173b6912;
-  transition: transform .22s, box-shadow .22s;
+  transition: transform .22s, box-shadow .22s, border-color .22s;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  opacity: .9;
 }
 
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 28px #173b6922;
+  border-color: #c4d9f4;
 }
 
 .card-top {
@@ -250,7 +283,7 @@ main {
 
 .card h3 {
   font-size: 14px;
-  line-height: 1.35;
+  line-height: 1.4;
   font-weight: 900;
   margin: 0;
   overflow-wrap: anywhere;
@@ -259,8 +292,8 @@ main {
 .card p {
   font-size: 12px;
   color: var(--muted);
-  line-height: 1.5;
-  margin: 9px 0 14px;
+  line-height: 1.55;
+  margin: 9px 0 15px;
   min-height: 36px;
   flex: 1;
 }
@@ -284,11 +317,12 @@ main {
   font-size: 12px;
   font-weight: 900;
   box-shadow: 0 3px 8px #15355b1a;
-  transition: filter .2s;
+  transition: filter .2s, transform .2s;
 }
 
 .open-link:hover {
   filter: brightness(1.12);
+  transform: translateY(-1px);
 }
 
 .arrow {
@@ -323,22 +357,88 @@ footer {
 }
 
 /* Individual folder colours */
-.c1  { --accent:#0878dc; --accent2:#034b9d; --pale:#dceeff; }
-.c2  { --accent:#f21c50; --accent2:#b60037; --pale:#ffe0e9; }
-.c3  { --accent:#13a44e; --accent2:#006b39; --pale:#dcf9e7; }
-.c4  { --accent:#6940e8; --accent2:#3820ad; --pale:#ece5ff; }
-.c5  { --accent:#ff650d; --accent2:#d33b00; --pale:#ffeadb; }
-.c6  { --accent:#08a4c4; --accent2:#006d8a; --pale:#d8f6ff; }
-.c7  { --accent:#f51b78; --accent2:#b80053; --pale:#ffe0f0; }
-.c8  { --accent:#0877df; --accent2:#064ba3; --pale:#deefff; }
-.c9  { --accent:#7547d9; --accent2:#4a25a8; --pale:#ece5ff; }
-.c10 { --accent:#22a74b; --accent2:#08722f; --pale:#def8e4; }
-.c11 { --accent:#0868c6; --accent2:#064b98; --pale:#e0efff; }
-.c12 { --accent:#ef2445; --accent2:#b9002b; --pale:#ffe1e7; }
+
+.c1 {
+  --accent: #0878dc;
+  --accent2: #034b9d;
+  --pale: #dceeff;
+}
+
+.c2 {
+  --accent: #f21c50;
+  --accent2: #b60037;
+  --pale: #ffe0e9;
+}
+
+.c3 {
+  --accent: #13a44e;
+  --accent2: #006b39;
+  --pale: #dcf9e7;
+}
+
+.c4 {
+  --accent: #6940e8;
+  --accent2: #3820ad;
+  --pale: #ece5ff;
+}
+
+.c5 {
+  --accent: #ff650d;
+  --accent2: #d33b00;
+  --pale: #ffeadb;
+}
+
+.c6 {
+  --accent: #08a4c4;
+  --accent2: #006d8a;
+  --pale: #d8f6ff;
+}
+
+.c7 {
+  --accent: #f51b78;
+  --accent2: #b80053;
+  --pale: #ffe0f0;
+}
+
+.c8 {
+  --accent: #0877df;
+  --accent2: #064ba3;
+  --pale: #deefff;
+}
+
+.c9 {
+  --accent: #7547d9;
+  --accent2: #4a25a8;
+  --pale: #ece5ff;
+}
+
+.c10 {
+  --accent: #22a74b;
+  --accent2: #08722f;
+  --pale: #def8e4;
+}
+
+.c11 {
+  --accent: #0868c6;
+  --accent2: #064b98;
+  --pale: #e0efff;
+}
+
+.c12 {
+  --accent: #ef2445;
+  --accent2: #b9002b;
+  --pale: #ffe1e7;
+}
+
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid #ffbd26;
+  outline-offset: 3px;
+}
 
 @media (min-width: 1450px) {
   .card {
-    padding: 17px 15px 13px;
+    padding: 18px 16px 15px;
   }
 }
 
@@ -359,7 +459,7 @@ footer {
   }
 
   .card {
-    padding: 13px 10px 10px;
+    padding: 13px 10px 12px;
   }
 
   .card-top {
@@ -406,7 +506,7 @@ footer {
   }
 
   .card {
-    padding: 16px 13px 12px;
+    padding: 16px 13px 13px;
   }
 
   .card h3 {
@@ -419,6 +519,19 @@ footer {
 
   .arrow {
     display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
   }
 }
 </style>
@@ -461,6 +574,7 @@ footer {
 
   <section class="grid" id="folderGrid">
 
+    <!-- CARD 1 -->
     <article class="card c1" data-search="L O DSRs law order daily situation reports">
       <div class="number">1</div>
       <div class="card-top">
@@ -474,6 +588,7 @@ footer {
       </div>
     </article>
 
+    <!-- CARD 2 -->
     <article class="card c2" data-search="Annexure A B C seizures DSRs">
       <div class="number">2</div>
       <div class="card-top">
@@ -487,6 +602,7 @@ footer {
       </div>
     </article>
 
+    <!-- CARD 3 -->
     <article class="card c3" data-search="BB schemes">
       <div class="number">3</div>
       <div class="card-top">
@@ -500,6 +616,7 @@ footer {
       </div>
     </article>
 
+    <!-- CARD 4 -->
     <article class="card c4" data-search="Election petitions replies">
       <div class="number">4</div>
       <div class="card-top">
@@ -513,6 +630,7 @@ footer {
       </div>
     </article>
 
+    <!-- CARD 5 -->
     <article class="card c5" data-search="Nominations">
       <div class="number">5</div>
       <div class="card-top">
@@ -526,6 +644,7 @@ footer {
       </div>
     </article>
 
+    <!-- CARD 6 -->
     <article class="card c6" data-search="Election memos replies correspondence">
       <div class="number">6</div>
       <div class="card-top">
@@ -539,6 +658,7 @@ footer {
       </div>
     </article>
 
+    <!-- CARD 7 -->
     <article class="card c7" data-search="Paper clippings newspaper press coverage">
       <div class="number">7</div>
       <div class="card-top">
@@ -552,6 +672,7 @@ footer {
       </div>
     </article>
 
+    <!-- CARD 8 -->
     <article class="card c8" data-search="Photos videos photographs election activities">
       <div class="number">8</div>
       <div class="card-top">
@@ -565,6 +686,7 @@ footer {
       </div>
     </article>
 
+    <!-- CARD 9 -->
     <article class="card c9" data-search="Google Drive links resources">
       <div class="number">9</div>
       <div class="card-top">
@@ -578,6 +700,7 @@ footer {
       </div>
     </article>
 
+    <!-- CARD 10 -->
     <article class="card c10" data-search="Election notification">
       <div class="number">10</div>
       <div class="card-top">
@@ -591,6 +714,7 @@ footer {
       </div>
     </article>
 
+    <!-- CARD 11 -->
     <article class="card c11" data-search="Old election cases miscellaneous">
       <div class="number">11</div>
       <div class="card-top">
@@ -604,6 +728,7 @@ footer {
       </div>
     </article>
 
+    <!-- CARD 12 -->
     <article class="card c12" data-search="ATRs L O Law Order Action Taken Reports">
       <div class="number">12</div>
       <div class="card-top">
@@ -641,7 +766,10 @@ searchInput.addEventListener("input", function () {
       card.textContent.toLowerCase().includes(query);
 
     card.hidden = !matches;
-    if (matches) count++;
+
+    if (matches) {
+      count++;
+    }
   });
 
   emptyMessage.style.display = count ? "none" : "block";
