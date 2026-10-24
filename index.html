@@ -4,194 +4,264 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chittoor District Police - Election Portal</title>
+<title>Chittoor District Police | Election Portal</title>
 
 <style>
 :root {
-  --navy: #102b50;
-  --blue: #1e4f91;
-  --gold: #e8b84a;
-  --background: #f2f5fa;
-  --white: #ffffff;
-  --text: #203047;
+  --navy: #102747;
+  --blue: #1d4e89;
+  --gold: #e8bd59;
+  --bg: #f3f6fb;
+  --text: #20324b;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--background);
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
   color: var(--text);
 }
 
 header {
-  background: linear-gradient(135deg, #102b50, #1e4f91);
+  background: linear-gradient(125deg, #0c203d, #1c508d);
   color: white;
   text-align: center;
-  padding: 32px 16px;
+  padding: 35px 16px 30px;
   border-bottom: 5px solid var(--gold);
 }
 
+.header-label {
+  color: #f3d88f;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
 header h1 {
-  margin: 0 0 10px;
-  font-size: clamp(24px, 4vw, 36px);
+  margin: 0;
+  font-size: clamp(25px, 4vw, 39px);
+  font-weight: 800;
   letter-spacing: 1px;
 }
 
 header h2 {
-  margin: 0;
-  font-size: clamp(16px, 2.5vw, 23px);
+  font-size: clamp(16px, 2.4vw, 23px);
+  margin: 12px 0 8px;
   font-weight: 600;
 }
 
 header p {
-  margin: 12px 0 0;
+  margin: 0;
   font-size: 14px;
-  color: #e4edf9;
+  color: #dce8f7;
 }
 
-main {
-  max-width: 1250px;
-  margin: 0 auto;
-  padding: 26px 18px 40px;
+.container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 25px 20px 42px;
 }
 
-.main-folder {
+.intro {
   text-align: center;
-  margin-bottom: 24px;
+  margin: 4px 0 22px;
 }
 
-.main-folder a {
-  display: inline-block;
+.intro h3 {
+  font-size: 22px;
+  margin: 0 0 7px;
+  color: var(--navy);
+}
+
+.intro p {
+  color: #697b91;
+  margin: 0;
+  font-size: 14px;
+}
+
+.main-link-wrap {
+  text-align: center;
+  margin: 20px 0 25px;
+}
+
+.main-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   background: var(--gold);
-  color: #172b46;
-  padding: 13px 22px;
-  border-radius: 8px;
+  color: #182a42;
+  padding: 13px 24px;
+  border-radius: 7px;
+  font-weight: 800;
+  font-size: 14px;
   text-decoration: none;
-  font-weight: bold;
+  box-shadow: 0 4px 12px #172b4618;
 }
 
-.main-folder a:hover {
-  background: #f3ca70;
+.main-link:hover {
+  background: #f3d17b;
+  transform: translateY(-1px);
 }
 
-.search-wrap {
-  max-width: 560px;
-  margin: 0 auto 26px;
+.search-area {
+  max-width: 570px;
+  margin: 0 auto 27px;
 }
 
-#searchBox {
+.search-area input {
   width: 100%;
-  padding: 14px 16px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  font-size: 16px;
-  outline: none;
+  padding: 14px 17px;
+  border: 1px solid #d5deea;
+  border-radius: 9px;
+  font-size: 15px;
   background: white;
+  outline: none;
+  box-shadow: 0 3px 12px #1b36550a;
 }
 
-#searchBox:focus {
+.search-area input:focus {
   border-color: var(--blue);
-  box-shadow: 0 0 0 3px #1e4f9120;
+  box-shadow: 0 0 0 3px #1d4e8918;
 }
 
 .folder-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 21px;
 }
 
 .folder-card {
   display: flex;
-  align-items: center;
-  gap: 15px;
-  min-height: 112px;
-  padding: 20px;
-  background: var(--white);
-  border: 1px solid #e0e7f0;
-  border-left: 5px solid var(--blue);
-  border-radius: 10px;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 220px;
+  background: white;
+  border: 1px solid #e1e7f0;
+  border-radius: 13px;
   text-decoration: none;
   color: var(--text);
-  box-shadow: 0 3px 10px #102b500d;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 5px 18px #1a31500c;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
 .folder-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px #102b5018;
-  border-left-color: var(--gold);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px #10274720;
 }
 
-.folder-icon {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  background: #eaf0fa;
-  color: var(--blue);
-  font-size: 25px;
+.card-art {
+  height: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(130deg, var(--shade1), var(--shade2));
 }
 
-.folder-number {
-  color: #61738b;
+.card-art::before,
+.card-art::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: #ffffff15;
+}
+
+.card-art::before {
+  width: 175px;
+  height: 175px;
+  top: -95px;
+  right: -25px;
+}
+
+.card-art::after {
+  width: 130px;
+  height: 130px;
+  bottom: -85px;
+  left: -22px;
+}
+
+.art-number {
+  position: absolute;
+  left: 15px;
+  top: 13px;
+  color: #ffffffdf;
   font-size: 12px;
-  font-weight: bold;
-  margin-bottom: 6px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.folder-name {
+.art-symbol {
+  position: relative;
+  z-index: 1;
+  font-size: 53px;
+  filter: drop-shadow(0 5px 5px #00000022);
+  transition: transform .2s ease;
+}
+
+.folder-card:hover .art-symbol {
+  transform: scale(1.08);
+}
+
+.card-info {
+  padding: 17px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-info h3 {
   font-size: 16px;
-  font-weight: bold;
-  line-height: 1.4;
+  line-height: 1.45;
+  margin: 0;
+  color: #1b2d46;
+  font-weight: 750;
 }
 
-.open-label {
-  display: block;
-  margin-top: 7px;
-  color: var(--blue);
+.card-bottom {
+  margin-top: auto;
+  padding-top: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #1d4e89;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.card-bottom span:last-child {
+  font-size: 19px;
 }
 
 .no-results {
   display: none;
+  padding: 28px;
   text-align: center;
-  padding: 30px;
-  color: #65758a;
+  color: #697b91;
 }
 
 footer {
-  text-align: center;
+  background: #0c203d;
+  color: #d9e5f4;
   padding: 20px 15px;
-  background: var(--navy);
-  color: #e4edf9;
-  font-size: 13px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.8;
 }
 
 @media (max-width: 900px) {
-  .folder-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  .folder-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 560px) {
-  .folder-grid {
-    grid-template-columns: 1fr;
-  }
-
-  main {
-    padding: 20px 12px 30px;
-  }
-
-  .folder-card {
-    min-height: 95px;
-  }
+  .folder-grid { grid-template-columns: 1fr; }
+  .container { padding: 22px 13px 30px; }
+  .folder-card { min-height: 205px; }
 }
 </style>
 </head>
@@ -199,170 +269,205 @@ footer {
 <body>
 
 <header>
+  <div class="header-label">Official Election Information Portal</div>
   <h1>CHITTOOR DISTRICT POLICE</h1>
   <h2>ORDINARY ELECTIONS TO LOCAL BODIES</h2>
-  <p>Election Information &amp; Document Portal</p>
+  <p>Election Documents • Law &amp; Order • Reports • Instructions</p>
 </header>
 
-<main>
+<main class="container">
 
-  <div class="main-folder">
-    <a href="https://drive.google.com/drive/folders/1Q1HxsIf1YT2sAVZKBDcUrzwJn-NLGOZP?usp=sharing"
+  <div class="intro">
+    <h3>Election Management Portal</h3>
+    <p>Select a folder below to access the relevant election records and documents.</p>
+  </div>
+
+  <div class="main-link-wrap">
+    <a class="main-link"
+       href="https://drive.google.com/drive/folders/1Q1HxsIf1YT2sAVZKBDcUrzwJn-NLGOZP?usp=sharing"
        target="_blank" rel="noopener noreferrer">
-      📁 OPEN MAIN ELECTION FOLDER
+      📁 &nbsp; OPEN MAIN ELECTION FOLDER
     </a>
   </div>
 
-  <div class="search-wrap">
-    <input
-      type="search"
-      id="searchBox"
-      placeholder="Search election folders..."
+  <div class="search-area">
+    <input type="search" id="searchBox"
+      placeholder="🔍  Search folders by name..."
       aria-label="Search election folders">
   </div>
 
   <div class="folder-grid" id="folderGrid">
 
+    <!-- FOLDER 1 -->
     <a class="folder-card"
        href="https://drive.google.com/drive/folders/1W7tjaYYOKzya8HCvJcHVm8R-OhcnA7dg?usp=sharing"
        target="_blank" rel="noopener noreferrer">
-      <span class="folder-icon">📂</span>
-      <span>
-        <span class="folder-number">FOLDER 01</span>
-        <span class="folder-name">L &amp; O DSRs</span>
-        <span class="open-label">Open folder ↗</span>
-      </span>
+      <div class="card-art" style="--shade1:#183e69;--shade2:#3679a8">
+        <span class="art-number">FOLDER 01</span>
+        <span class="art-symbol">📊</span>
+      </div>
+      <div class="card-info">
+        <h3>1. L &amp; O DSRs</h3>
+        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+      </div>
     </a>
 
+    <!-- FOLDER 2 -->
     <a class="folder-card"
        href="https://drive.google.com/drive/folders/1ruRDB6PP1D2n84mMgpLqLGeti-6yyN8T?usp=sharing"
        target="_blank" rel="noopener noreferrer">
-      <span class="folder-icon">📂</span>
-      <span>
-        <span class="folder-number">FOLDER 02</span>
-        <span class="folder-name">Annexure A, B &amp; C – Seizures DSRs</span>
-        <span class="open-label">Open folder ↗</span>
-      </span>
+      <div class="card-art" style="--shade1:#27665e;--shade2:#50a79a">
+        <span class="art-number">FOLDER 02</span>
+        <span class="art-symbol">📑</span>
+      </div>
+      <div class="card-info">
+        <h3>2. Annexure A, B &amp; C - Seizures DSRs</h3>
+        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+      </div>
     </a>
 
+    <!-- FOLDER 3 -->
     <a class="folder-card"
        href="https://drive.google.com/drive/folders/1HW8HWvPdOKgEsVGQ6etoMzh7t0oqKEQv?usp=sharing"
        target="_blank" rel="noopener noreferrer">
-      <span class="folder-icon">📂</span>
-      <span>
-        <span class="folder-number">FOLDER 03</span>
-        <span class="folder-name">BB SCHEMES</span>
-        <span class="open-label">Open folder ↗</span>
-      </span>
+      <div class="card-art" style="--shade1:#66418b;--shade2:#9873c0">
+        <span class="art-number">FOLDER 03</span>
+        <span class="art-symbol">🗂️</span>
+      </div>
+      <div class="card-info">
+        <h3>3. BB SCHEMES</h3>
+        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+      </div>
     </a>
 
+    <!-- FOLDER 4 -->
     <a class="folder-card"
        href="https://drive.google.com/drive/folders/1SfLfuIZcoLbdJdbTy2LQRPuW8eZxbzio?usp=sharing"
        target="_blank" rel="noopener noreferrer">
-      <span class="folder-icon">📂</span>
-      <span>
-        <span class="folder-number">FOLDER 04</span>
-        <span class="folder-name">ELECTION PETITIONS &amp; REPLIES</span>
-        <span class="open-label">Open folder ↗</span>
-      </span>
+      <div class="card-art" style="--shade1:#8c4939;--shade2:#ca8064">
+        <span class="art-number">FOLDER 04</span>
+        <span class="art-symbol">📝</span>
+      </div>
+      <div class="card-info">
+        <h3>4. ELECTION PETITIONS &amp; REPLIES</h3>
+        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+      </div>
     </a>
 
+    <!-- FOLDER 5 -->
     <a class="folder-card"
        href="https://drive.google.com/drive/folders/1W0upkMrxlNz_PNwHm8UV_lkWCD49orPo?usp=sharing"
        target="_blank" rel="noopener noreferrer">
-      <span class="folder-icon">📂</span>
-      <span>
-        <span class="folder-number">FOLDER 05</span>
-        <span class="folder-name">NOMINATIONS</span>
-        <span class="open-label">Open folder ↗</span>
-      </span>
+      <div class="card-art" style="--shade1:#285c9a;--shade2:#548fce">
+        <span class="art-number">FOLDER 05</span>
+        <span class="art-symbol">📋</span>
+      </div>
+      <div class="card-info">
+        <h3>5. NOMINATIONS</h3>
+        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+      </div>
     </a>
 
+    <!-- FOLDER 6 -->
     <a class="folder-card"
        href="https://drive.google.com/drive/folders/1tUSJRHwuNqzyQagYeO_ajt8FPVza1cN2?usp=sharing"
        target="_blank" rel="noopener noreferrer">
-      <span class="folder-icon">📂</span>
-      <span>
-        <span class="folder-number">FOLDER 06</span>
-        <span class="folder-name">ELECTION MEMOS AND REPLIES</span>
-        <span class="open-label">Open folder ↗</span>
-      </span>
+      <div class="card-art" style="--shade1:#73582b;--shade2:#b9984f">
+        <span class="art-number">FOLDER 06</span>
+        <span class="art-symbol">📜</span>
+      </div>
+      <div class="card-info">
+        <h3>6. ELECTION MEMOS &amp; REPLIES</h3>
+        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+      </div>
     </a>
 
+    <!-- FOLDER 7 -->
     <a class="folder-card"
        href="https://drive.google.com/drive/folders/1RCybM9fmUk_1zwtnXEDX8Mv2kpJvEh0f?usp=sharing"
        target="_blank" rel="noopener noreferrer">
-      <span class="folder-icon">📂</span>
-      <span>
-        <span class="folder-number">FOLDER 07</span>
-        <span class="folder-name">PAPER CLIPPINGS</span>
-        <span class="open-label">Open folder ↗</span>
-      </span>
+      <div class="card-art" style="--shade1:#44536a;--shade2:#8195ad">
+        <span class="art-number">FOLDER 07</span>
+        <span class="art-symbol">📰</span>
+      </div>
+      <div class="card-info">
+        <h3>7. PAPER CLIPPINGS</h3>
+        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+      </div>
     </a>
 
+    <!-- FOLDER 8 -->
     <a class="folder-card"
        href="https://drive.google.com/drive/folders/1VFjDiiI6BA0NH6c7r6gDs85Z-t2EQxHi?usp=sharing"
        target="_blank" rel="noopener noreferrer">
-      <span class="folder-icon">📂</span>
-      <span>
-        <span class="folder-number">FOLDER 08</span>
-        <span class="folder-name">PHOTOS AND VIDEOS</span>
-        <span class="open-label">Open folder ↗</span>
-      </span>
+      <div class="card-art" style="--shade1:#176a83;--shade2:#51a9bd">
+        <span class="art-number">FOLDER 08</span>
+        <span class="art-symbol">📸</span>
+      </div>
+      <div class="card-info">
+        <h3>8. PHOTOS &amp; VIDEOS</h3>
+        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+      </div>
     </a>
 
+    <!-- FOLDER 9 -->
     <a class="folder-card"
        href="https://drive.google.com/drive/folders/1FeQuUvnJ23HUXCtzaHgmb43EDOM6F_9p?usp=sharing"
        target="_blank" rel="noopener noreferrer">
-      <span class="folder-icon">📂</span>
-      <span>
-        <span class="folder-number">FOLDER 09</span>
-        <span class="folder-name">GOOGLE DRIVE LINKS</span>
-        <span class="open-label">Open folder ↗</span>
-      </span>
+      <div class="card-art" style="--shade1:#4e477d;--shade2:#837bc1">
+        <span class="art-number">FOLDER 09</span>
+        <span class="art-symbol">🔗</span>
+      </div>
+      <div class="card-info">
+        <h3>9. GOOGLE DRIVE LINKS</h3>
+        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+      </div>
     </a>
 
+    <!-- FOLDER 10 -->
     <a class="folder-card"
        href="https://drive.google.com/drive/folders/1i234eCUhyaxHtC6biftYcMkRyDbbu1td?usp=sharing"
        target="_blank" rel="noopener noreferrer">
-      <span class="folder-icon">📂</span>
-      <span>
-        <span class="folder-number">FOLDER 10</span>
-        <span class="folder-name">ELECTION NOTIFICATION</span>
-        <span class="open-label">Open folder ↗</span>
-      </span>
+      <div class="card-art" style="--shade1:#286b4a;--shade2:#62a977">
+        <span class="art-number">FOLDER 10</span>
+        <span class="art-symbol">📣</span>
+      </div>
+      <div class="card-info">
+        <h3>10. ELECTION NOTIFICATION</h3>
+        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+      </div>
     </a>
 
   </div>
 
   <div class="no-results" id="noResults">
-    No matching folders found.
+    No matching election folders found.
   </div>
 
 </main>
 
 <footer>
-  Chittoor District Police | Ordinary Elections to Local Bodies
+  <strong>CHITTOOR DISTRICT POLICE</strong><br>
+  Ordinary Elections to Local Bodies<br>
+  Election Information &amp; Document Portal
 </footer>
 
 <script>
 const searchBox = document.getElementById("searchBox");
-const folderCards = Array.from(
-  document.querySelectorAll(".folder-card")
-);
+const cards = document.querySelectorAll(".folder-card");
 const noResults = document.getElementById("noResults");
 
 searchBox.addEventListener("input", function () {
   const query = this.value.trim().toLowerCase();
-  let visibleCount = 0;
+  let count = 0;
 
-  folderCards.forEach(function (card) {
-    const matches = card.textContent.toLowerCase().includes(query);
-    card.style.display = matches ? "flex" : "none";
-    if (matches) visibleCount++;
+  cards.forEach(function (card) {
+    const match = card.innerText.toLowerCase().includes(query);
+    card.style.display = match ? "flex" : "none";
+    if (match) count++;
   });
 
-  noResults.style.display = visibleCount === 0 ? "block" : "none";
+  noResults.style.display = count === 0 ? "block" : "none";
 });
 </script>
 
