@@ -7,261 +7,207 @@
 <title>Chittoor District Police | Election Portal</title>
 
 <style>
-:root {
-  --navy: #102747;
-  --blue: #1d4e89;
-  --gold: #e8bd59;
-  --bg: #f3f6fb;
-  --text: #20324b;
+* {
+  box-sizing: border-box;
 }
-
-* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f5fb;
+  color: #102744;
 }
 
 header {
-  background: linear-gradient(125deg, #0c203d, #1c508d);
+  background: linear-gradient(120deg, #092c55, #176b91);
   color: white;
+  padding: 28px 15px;
   text-align: center;
-  padding: 35px 16px 30px;
-  border-bottom: 5px solid var(--gold);
-}
-
-.header-label {
-  color: #f3d88f;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 3px;
-  margin-bottom: 10px;
+  box-shadow: 0 4px 15px #0002;
 }
 
 header h1 {
   margin: 0;
-  font-size: clamp(25px, 4vw, 39px);
-  font-weight: 800;
+  font-size: clamp(23px, 4vw, 34px);
   letter-spacing: 1px;
 }
 
 header h2 {
-  font-size: clamp(16px, 2.4vw, 23px);
-  margin: 12px 0 8px;
+  margin: 10px 0 0;
+  font-size: 19px;
   font-weight: 600;
 }
 
 header p {
-  margin: 0;
+  margin: 12px 0 0;
   font-size: 14px;
-  color: #dce8f7;
+  letter-spacing: .4px;
 }
 
 .container {
-  max-width: 1280px;
-  margin: auto;
-  padding: 25px 20px 42px;
-}
-
-.intro {
-  text-align: center;
-  margin: 4px 0 22px;
-}
-
-.intro h3 {
-  font-size: 22px;
-  margin: 0 0 7px;
-  color: var(--navy);
-}
-
-.intro p {
-  color: #697b91;
-  margin: 0;
-  font-size: 14px;
-}
-
-.main-link-wrap {
-  text-align: center;
-  margin: 20px 0 25px;
-}
-
-.main-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: var(--gold);
-  color: #182a42;
-  padding: 13px 24px;
-  border-radius: 7px;
-  font-weight: 800;
-  font-size: 14px;
-  text-decoration: none;
-  box-shadow: 0 4px 12px #172b4618;
-}
-
-.main-link:hover {
-  background: #f3d17b;
-  transform: translateY(-1px);
+  width: min(1120px, 94%);
+  margin: 28px auto 45px;
 }
 
 .search-area {
-  max-width: 570px;
-  margin: 0 auto 27px;
+  max-width: 500px;
+  margin: 0 auto 24px;
 }
 
-.search-area input {
+#searchInput {
   width: 100%;
   padding: 14px 17px;
-  border: 1px solid #d5deea;
+  border: 1px solid #d7dfeb;
   border-radius: 9px;
   font-size: 15px;
-  background: white;
   outline: none;
-  box-shadow: 0 3px 12px #1b36550a;
+  box-shadow: 0 3px 12px #17375e0d;
 }
 
-.search-area input:focus {
-  border-color: var(--blue);
-  box-shadow: 0 0 0 3px #1d4e8918;
+#searchInput:focus {
+  border-color: #2475b9;
+  box-shadow: 0 0 0 3px #2475b922;
+}
+
+.folder-count {
+  text-align: center;
+  color: #52677e;
+  font-size: 14px;
+  margin-bottom: 22px;
 }
 
 .folder-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 21px;
+  gap: 20px;
 }
 
 .folder-card {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  min-width: 0;
-  min-height: 220px;
   background: white;
-  border: 1px solid #e1e7f0;
-  border-radius: 13px;
-  text-decoration: none;
-  color: var(--text);
-  box-shadow: 0 5px 18px #1a31500c;
-  transition: transform .2s ease, box-shadow .2s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #dce4ef;
+  box-shadow: 0 5px 15px #17375e0b;
+  transition: transform .2s, box-shadow .2s;
 }
 
 .folder-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px #10274720;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px #17375e19;
 }
 
-.card-art {
-  height: 125px;
+.folder-banner {
+  height: 108px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(130deg, var(--shade1), var(--shade2));
 }
 
-.card-art::before,
-.card-art::after {
+.folder-banner::before,
+.folder-banner::after {
   content: "";
   position: absolute;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  background: #ffffff15;
+  background: #ffffff12;
 }
 
-.card-art::before {
-  width: 175px;
-  height: 175px;
-  top: -95px;
-  right: -25px;
+.folder-banner::before {
+  top: -80px;
+  right: -20px;
 }
 
-.card-art::after {
-  width: 130px;
-  height: 130px;
-  bottom: -85px;
-  left: -22px;
+.folder-banner::after {
+  bottom: -115px;
+  left: -25px;
 }
 
-.art-number {
+.folder-number {
   position: absolute;
-  left: 15px;
   top: 13px;
-  color: #ffffffdf;
-  font-size: 12px;
-  font-weight: 800;
+  left: 13px;
+  z-index: 1;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
   letter-spacing: 1px;
 }
 
-.art-symbol {
-  position: relative;
+.folder-emoji {
+  font-size: 43px;
   z-index: 1;
-  font-size: 53px;
-  filter: drop-shadow(0 5px 5px #00000022);
-  transition: transform .2s ease;
+  filter: drop-shadow(0 3px 3px #0002);
 }
 
-.folder-card:hover .art-symbol {
-  transform: scale(1.08);
+.folder-content {
+  padding: 17px 15px 16px;
 }
 
-.card-info {
-  padding: 17px 18px 16px;
+.folder-content h3 {
+  margin: 0 0 19px;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 21px;
+  overflow-wrap: anywhere;
+}
+
+.open-folder {
   display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.card-info h3 {
-  font-size: 16px;
-  line-height: 1.45;
-  margin: 0;
-  color: #1b2d46;
-  font-weight: 750;
-}
-
-.card-bottom {
-  margin-top: auto;
-  padding-top: 13px;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  color: #1d4e89;
-  font-size: 12px;
-  font-weight: 700;
+  align-items: center;
+  color: #0756a4;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: .3px;
 }
 
-.card-bottom span:last-child {
-  font-size: 19px;
+.open-folder:hover {
+  color: #d27b00;
 }
 
-.no-results {
+.open-folder span:last-child {
+  font-size: 18px;
+}
+
+.hidden {
   display: none;
-  padding: 28px;
+}
+
+#noResults {
+  display: none;
   text-align: center;
-  color: #697b91;
+  padding: 30px;
+  color: #60758c;
 }
 
 footer {
-  background: #0c203d;
-  color: #d9e5f4;
-  padding: 20px 15px;
+  background: #092c55;
+  color: white;
   text-align: center;
+  padding: 18px 10px;
   font-size: 12px;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
-@media (max-width: 900px) {
-  .folder-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 800px) {
+  .folder-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
 }
 
-@media (max-width: 560px) {
-  .folder-grid { grid-template-columns: 1fr; }
-  .container { padding: 22px 13px 30px; }
-  .folder-card { min-height: 205px; }
+@media (max-width: 480px) {
+  .folder-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .folder-banner {
+    height: 100px;
+  }
 }
 </style>
 </head>
@@ -269,205 +215,219 @@ footer {
 <body>
 
 <header>
-  <div class="header-label">Official Election Information Portal</div>
   <h1>CHITTOOR DISTRICT POLICE</h1>
-  <h2>ORDINARY ELECTIONS TO LOCAL BODIES</h2>
-  <p>Election Documents • Law &amp; Order • Reports • Instructions</p>
+  <h2>ELECTION PORTAL</h2>
+  <p>Election Documents • Reports • Memos • Cases</p>
 </header>
 
 <main class="container">
 
-  <div class="intro">
-    <h3>Election Management Portal</h3>
-    <p>Select a folder below to access the relevant election records and documents.</p>
-  </div>
-
-  <div class="main-link-wrap">
-    <a class="main-link"
-       href="https://drive.google.com/drive/folders/1Q1HxsIf1YT2sAVZKBDcUrzwJn-NLGOZP?usp=sharing"
-       target="_blank" rel="noopener noreferrer">
-      📁 &nbsp; OPEN MAIN ELECTION FOLDER
-    </a>
-  </div>
-
   <div class="search-area">
-    <input type="search" id="searchBox"
-      placeholder="🔍  Search folders by name..."
-      aria-label="Search election folders">
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="🔎 Search folders by name..."
+      aria-label="Search folders"
+    >
   </div>
 
-  <div class="folder-grid" id="folderGrid">
+  <div class="folder-count">
+    TOTAL FOLDERS: <strong id="totalFolders">11</strong>
+  </div>
 
-    <!-- FOLDER 1 -->
-    <a class="folder-card"
-       href="https://drive.google.com/drive/folders/1W7tjaYYOKzya8HCvJcHVm8R-OhcnA7dg?usp=sharing"
-       target="_blank" rel="noopener noreferrer">
-      <div class="card-art" style="--shade1:#183e69;--shade2:#3679a8">
-        <span class="art-number">FOLDER 01</span>
-        <span class="art-symbol">📊</span>
+  <section class="folder-grid" id="folderGrid">
+
+    <!-- FOLDER 01 -->
+    <article class="folder-card">
+      <div class="folder-banner" style="background:linear-gradient(120deg,#194675,#3e7da5)">
+        <span class="folder-number">FOLDER 01</span>
+        <span class="folder-emoji">📊</span>
       </div>
-      <div class="card-info">
+      <div class="folder-content">
         <h3>1. L &amp; O DSRs</h3>
-        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span>↗</span>
+        </a>
       </div>
-    </a>
+    </article>
 
-    <!-- FOLDER 2 -->
-    <a class="folder-card"
-       href="https://drive.google.com/drive/folders/1ruRDB6PP1D2n84mMgpLqLGeti-6yyN8T?usp=sharing"
-       target="_blank" rel="noopener noreferrer">
-      <div class="card-art" style="--shade1:#27665e;--shade2:#50a79a">
-        <span class="art-number">FOLDER 02</span>
-        <span class="art-symbol">📑</span>
+    <!-- FOLDER 02 -->
+    <article class="folder-card">
+      <div class="folder-banner" style="background:linear-gradient(120deg,#286b64,#55aa9b)">
+        <span class="folder-number">FOLDER 02</span>
+        <span class="folder-emoji">📑</span>
       </div>
-      <div class="card-info">
+      <div class="folder-content">
         <h3>2. Annexure A, B &amp; C - Seizures DSRs</h3>
-        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span>↗</span>
+        </a>
       </div>
-    </a>
+    </article>
 
-    <!-- FOLDER 3 -->
-    <a class="folder-card"
-       href="https://drive.google.com/drive/folders/1HW8HWvPdOKgEsVGQ6etoMzh7t0oqKEQv?usp=sharing"
-       target="_blank" rel="noopener noreferrer">
-      <div class="card-art" style="--shade1:#66418b;--shade2:#9873c0">
-        <span class="art-number">FOLDER 03</span>
-        <span class="art-symbol">🗂️</span>
+    <!-- FOLDER 03 -->
+    <article class="folder-card">
+      <div class="folder-banner" style="background:linear-gradient(120deg,#704294,#9a75b9)">
+        <span class="folder-number">FOLDER 03</span>
+        <span class="folder-emoji">📁</span>
       </div>
-      <div class="card-info">
+      <div class="folder-content">
         <h3>3. BB SCHEMES</h3>
-        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span>↗</span>
+        </a>
       </div>
-    </a>
+    </article>
 
-    <!-- FOLDER 4 -->
-    <a class="folder-card"
-       href="https://drive.google.com/drive/folders/1SfLfuIZcoLbdJdbTy2LQRPuW8eZxbzio?usp=sharing"
-       target="_blank" rel="noopener noreferrer">
-      <div class="card-art" style="--shade1:#8c4939;--shade2:#ca8064">
-        <span class="art-number">FOLDER 04</span>
-        <span class="art-symbol">📝</span>
+    <!-- FOLDER 04 -->
+    <article class="folder-card">
+      <div class="folder-banner" style="background:linear-gradient(120deg,#99503e,#c98269)">
+        <span class="folder-number">FOLDER 04</span>
+        <span class="folder-emoji">📝</span>
       </div>
-      <div class="card-info">
+      <div class="folder-content">
         <h3>4. ELECTION PETITIONS &amp; REPLIES</h3>
-        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span>↗</span>
+        </a>
       </div>
-    </a>
+    </article>
 
-    <!-- FOLDER 5 -->
-    <a class="folder-card"
-       href="https://drive.google.com/drive/folders/1W0upkMrxlNz_PNwHm8UV_lkWCD49orPo?usp=sharing"
-       target="_blank" rel="noopener noreferrer">
-      <div class="card-art" style="--shade1:#285c9a;--shade2:#548fce">
-        <span class="art-number">FOLDER 05</span>
-        <span class="art-symbol">📋</span>
+    <!-- FOLDER 05 -->
+    <article class="folder-card">
+      <div class="folder-banner" style="background:linear-gradient(120deg,#2863a0,#5792ce)">
+        <span class="folder-number">FOLDER 05</span>
+        <span class="folder-emoji">📋</span>
       </div>
-      <div class="card-info">
+      <div class="folder-content">
         <h3>5. NOMINATIONS</h3>
-        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span>↗</span>
+        </a>
       </div>
-    </a>
+    </article>
 
-    <!-- FOLDER 6 -->
-    <a class="folder-card"
-       href="https://drive.google.com/drive/folders/1tUSJRHwuNqzyQagYeO_ajt8FPVza1cN2?usp=sharing"
-       target="_blank" rel="noopener noreferrer">
-      <div class="card-art" style="--shade1:#73582b;--shade2:#b9984f">
-        <span class="art-number">FOLDER 06</span>
-        <span class="art-symbol">📜</span>
+    <!-- FOLDER 06 -->
+    <article class="folder-card">
+      <div class="folder-banner" style="background:linear-gradient(120deg,#795b2b,#b99a52)">
+        <span class="folder-number">FOLDER 06</span>
+        <span class="folder-emoji">📜</span>
       </div>
-      <div class="card-info">
+      <div class="folder-content">
         <h3>6. ELECTION MEMOS &amp; REPLIES</h3>
-        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span>↗</span>
+        </a>
       </div>
-    </a>
+    </article>
 
-    <!-- FOLDER 7 -->
-    <a class="folder-card"
-       href="https://drive.google.com/drive/folders/1RCybM9fmUk_1zwtnXEDX8Mv2kpJvEh0f?usp=sharing"
-       target="_blank" rel="noopener noreferrer">
-      <div class="card-art" style="--shade1:#44536a;--shade2:#8195ad">
-        <span class="art-number">FOLDER 07</span>
-        <span class="art-symbol">📰</span>
+    <!-- FOLDER 07 -->
+    <article class="folder-card">
+      <div class="folder-banner" style="background:linear-gradient(120deg,#4b5b72,#8093a9)">
+        <span class="folder-number">FOLDER 07</span>
+        <span class="folder-emoji">📰</span>
       </div>
-      <div class="card-info">
+      <div class="folder-content">
         <h3>7. PAPER CLIPPINGS</h3>
-        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span>↗</span>
+        </a>
       </div>
-    </a>
+    </article>
 
-    <!-- FOLDER 8 -->
-    <a class="folder-card"
-       href="https://drive.google.com/drive/folders/1VFjDiiI6BA0NH6c7r6gDs85Z-t2EQxHi?usp=sharing"
-       target="_blank" rel="noopener noreferrer">
-      <div class="card-art" style="--shade1:#176a83;--shade2:#51a9bd">
-        <span class="art-number">FOLDER 08</span>
-        <span class="art-symbol">📸</span>
+    <!-- FOLDER 08 -->
+    <article class="folder-card">
+      <div class="folder-banner" style="background:linear-gradient(120deg,#16718a,#4aa7bb)">
+        <span class="folder-number">FOLDER 08</span>
+        <span class="folder-emoji">📸</span>
       </div>
-      <div class="card-info">
+      <div class="folder-content">
         <h3>8. PHOTOS &amp; VIDEOS</h3>
-        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span>↗</span>
+        </a>
       </div>
-    </a>
+    </article>
 
-    <!-- FOLDER 9 -->
-    <a class="folder-card"
-       href="https://drive.google.com/drive/folders/1FeQuUvnJ23HUXCtzaHgmb43EDOM6F_9p?usp=sharing"
-       target="_blank" rel="noopener noreferrer">
-      <div class="card-art" style="--shade1:#4e477d;--shade2:#837bc1">
-        <span class="art-number">FOLDER 09</span>
-        <span class="art-symbol">🔗</span>
+    <!-- FOLDER 09 -->
+    <article class="folder-card">
+      <div class="folder-banner" style="background:linear-gradient(120deg,#554d86,#8179bb)">
+        <span class="folder-number">FOLDER 09</span>
+        <span class="folder-emoji">🔗</span>
       </div>
-      <div class="card-info">
+      <div class="folder-content">
         <h3>9. GOOGLE DRIVE LINKS</h3>
-        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span>↗</span>
+        </a>
       </div>
-    </a>
+    </article>
 
-    <!-- FOLDER 10 -->
-    <a class="folder-card"
-       href="https://drive.google.com/drive/folders/1i234eCUhyaxHtC6biftYcMkRyDbbu1td?usp=sharing"
-       target="_blank" rel="noopener noreferrer">
-      <div class="card-art" style="--shade1:#286b4a;--shade2:#62a977">
-        <span class="art-number">FOLDER 10</span>
-        <span class="art-symbol">📣</span>
+    <!-- FOLDER 10: REPLACE TITLE AND LINK -->
+    <article class="folder-card">
+      <div class="folder-banner" style="background:linear-gradient(120deg,#21694b,#58a77a)">
+        <span class="folder-number">FOLDER 10</span>
+        <span class="folder-emoji">📣</span>
       </div>
-      <div class="card-info">
-        <h3>10. ELECTION NOTIFICATION</h3>
-        <div class="card-bottom"><span>OPEN FOLDER</span><span>↗</span></div>
+      <div class="folder-content">
+        <h3>10. REPLACE WITH EXISTING FOLDER 10 NAME</h3>
+        <a class="open-folder" href="#" target="_blank" rel="noopener noreferrer">
+          OPEN FOLDER <span>↗</span>
+        </a>
       </div>
-    </a>
+    </article>
 
-  </div>
+    <!-- FOLDER 11 -->
+    <article class="folder-card">
+      <div class="folder-banner" style="background:linear-gradient(120deg,#854b25,#d08c43)">
+        <span class="folder-number">FOLDER 11</span>
+        <span class="folder-emoji">🗂️</span>
+      </div>
+      <div class="folder-content">
+        <h3>11. OLD ELECTION CASES AND MISC</h3>
+        <a
+          class="open-folder"
+          href="https://drive.google.com/drive/folders/1A_GcugwV5ywgEQTZPdyPjU81t6FRitGi?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer">
+          OPEN FOLDER <span>↗</span>
+        </a>
+      </div>
+    </article>
 
-  <div class="no-results" id="noResults">
-    No matching election folders found.
-  </div>
+  </section>
+
+  <div id="noResults">No matching folders found.</div>
 
 </main>
 
 <footer>
   <strong>CHITTOOR DISTRICT POLICE</strong><br>
-  Ordinary Elections to Local Bodies<br>
-  Election Information &amp; Document Portal
+  Election Portal | Official Document Repository
 </footer>
 
 <script>
-const searchBox = document.getElementById("searchBox");
-const cards = document.querySelectorAll(".folder-card");
+const searchInput = document.getElementById("searchInput");
+const folderCards = Array.from(
+  document.querySelectorAll(".folder-card")
+);
+const totalFolders = document.getElementById("totalFolders");
 const noResults = document.getElementById("noResults");
 
-searchBox.addEventListener("input", function () {
-  const query = this.value.trim().toLowerCase();
-  let count = 0;
+totalFolders.textContent = folderCards.length;
 
-  cards.forEach(function (card) {
-    const match = card.innerText.toLowerCase().includes(query);
-    card.style.display = match ? "flex" : "none";
-    if (match) count++;
+searchInput.addEventListener("input", function () {
+  const query = this.value.trim().toLowerCase();
+  let visibleCount = 0;
+
+  folderCards.forEach(function (card) {
+    const matches = card.textContent.toLowerCase().includes(query);
+    card.classList.toggle("hidden", !matches);
+
+    if (matches) visibleCount++;
   });
 
-  noResults.style.display = count === 0 ? "block" : "none";
+  noResults.style.display = visibleCount === 0 ? "block" : "none";
 });
 </script>
 
