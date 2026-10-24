@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,15 +16,8 @@
   --muted: #5b6e8f;
   --page: #f2f7ff;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
@@ -33,7 +27,6 @@ body {
     radial-gradient(ellipse at 94% 70%, #e2edff 0, transparent 32%),
     var(--page);
 }
-
 header {
   position: relative;
   overflow: hidden;
@@ -47,9 +40,7 @@ header {
   border-bottom: 5px solid var(--gold);
   box-shadow: 0 8px 26px #08275b20;
 }
-
-header::before,
-header::after {
+header::before, header::after {
   content: "";
   position: absolute;
   width: 42%;
@@ -60,31 +51,9 @@ header::after {
   transform: rotate(20deg);
   pointer-events: none;
 }
-
-header::before {
-  left: -15%;
-  box-shadow: 0 12px 0 -5px #0875cf;
-}
-
-header::after {
-  right: -15%;
-  transform: rotate(-20deg);
-  box-shadow: 0 12px 0 -5px #0875cf;
-}
-
-.header-content {
-  position: relative;
-  z-index: 1;
-}
-
-.eyebrow {
-  color: #ffda51;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  margin: 0 0 10px;
-}
-
+header::before { left: -15%; box-shadow: 0 12px 0 -5px #0875cf; }
+header::after { right: -15%; transform: rotate(-20deg); box-shadow: 0 12px 0 -5px #0875cf; }
+.header-content { position: relative; z-index: 1; }
 h1 {
   font-size: clamp(25px, 4vw, 43px);
   font-weight: 900;
@@ -92,7 +61,6 @@ h1 {
   letter-spacing: 1px;
   text-wrap: balance;
 }
-
 .election-label {
   display: inline-block;
   background: linear-gradient(100deg, #ffbd25, #ffe47c);
@@ -104,39 +72,26 @@ h1 {
   margin: 12px 0 8px;
   box-shadow: 0 4px 12px #00000020;
 }
-
 .header-links {
   font-size: 13px;
   font-weight: 700;
   margin: 4px 0 0;
   color: #e9f3ff;
 }
-
-main {
-  max-width: 1650px;
-  margin: auto;
-  padding: 24px 25px 38px;
-}
-
-.intro {
-  text-align: center;
-  margin-bottom: 17px;
-}
-
+main { max-width: 1650px; margin: auto; padding: 24px 25px 38px; }
+.intro { text-align: center; margin-bottom: 17px; }
 .intro h2 {
   font-size: clamp(22px, 2.5vw, 31px);
   margin: 0 0 7px;
   font-weight: 900;
   color: #09285e;
 }
-
 .intro p {
   font-size: 15px;
   color: var(--muted);
   margin: 0;
   line-height: 1.6;
 }
-
 .tools {
   display: flex;
   justify-content: center;
@@ -145,7 +100,6 @@ main {
   margin: 20px auto 25px;
   flex-wrap: wrap;
 }
-
 .main-folder {
   display: inline-flex;
   align-items: center;
@@ -161,12 +115,10 @@ main {
   box-shadow: 0 5px 12px #b88b2530;
   transition: transform .2s, box-shadow .2s;
 }
-
 .main-folder:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 18px #b88b2545;
 }
-
 .search-box {
   display: flex;
   width: min(390px, 100%);
@@ -176,7 +128,6 @@ main {
   overflow: hidden;
   box-shadow: 0 4px 12px #234b7810;
 }
-
 .search-box input {
   flex: 1;
   min-width: 0;
@@ -187,12 +138,10 @@ main {
   background: transparent;
   color: var(--ink);
 }
-
 .search-box:focus-within {
   border-color: #3b82d0;
   box-shadow: 0 0 0 3px #0866c51a;
 }
-
 .search-symbol {
   display: flex;
   align-items: center;
@@ -202,18 +151,15 @@ main {
   padding: 0 18px;
   font-size: 22px;
 }
-
 .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
-
 .card {
   --accent: #0866c5;
   --accent2: #064da4;
   --pale: #e2f0ff;
-
   position: relative;
   overflow: hidden;
   background: #fff;
@@ -226,7 +172,6 @@ main {
   box-shadow: 0 7px 20px #173b6912;
   transition: transform .22s, box-shadow .22s, border-color .22s;
 }
-
 .card::after {
   content: "";
   position: absolute;
@@ -237,20 +182,17 @@ main {
   background: linear-gradient(90deg, var(--accent), var(--accent2));
   opacity: .9;
 }
-
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 28px #173b6922;
   border-color: #c4d9f4;
 }
-
 .card-top {
   display: flex;
   align-items: center;
   gap: 12px;
   min-height: 90px;
 }
-
 .number {
   position: absolute;
   top: 0;
@@ -267,7 +209,6 @@ main {
   border-radius: 0 0 19px 0;
   box-shadow: 2px 3px 8px #18345b20;
 }
-
 .icon-circle {
   flex: 0 0 70px;
   width: 70px;
@@ -280,7 +221,6 @@ main {
   justify-content: center;
   font-size: 34px;
 }
-
 .card h3 {
   font-size: 14px;
   line-height: 1.4;
@@ -288,7 +228,6 @@ main {
   margin: 0;
   overflow-wrap: anywhere;
 }
-
 .card p {
   font-size: 12px;
   color: var(--muted);
@@ -297,14 +236,12 @@ main {
   min-height: 36px;
   flex: 1;
 }
-
 .card-actions {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-top: auto;
 }
-
 .open-link {
   flex: 1;
   min-width: 0;
@@ -319,12 +256,10 @@ main {
   box-shadow: 0 3px 8px #15355b1a;
   transition: filter .2s, transform .2s;
 }
-
 .open-link:hover {
   filter: brightness(1.12);
   transform: translateY(-1px);
 }
-
 .arrow {
   flex: 0 0 39px;
   height: 39px;
@@ -337,135 +272,47 @@ main {
   font-weight: bold;
   border-radius: 50%;
 }
-
-.card[hidden] {
-  display: none;
-}
-
+.card[hidden] { display: none; }
 .empty {
   display: none;
   text-align: center;
   padding: 30px;
   color: var(--muted);
 }
-
 footer {
   text-align: center;
   color: #647897;
   font-size: 12px;
   padding: 8px 15px 25px;
 }
+.c1  { --accent:#0878dc; --accent2:#034b9d; --pale:#dceeff; }
+.c2  { --accent:#f21c50; --accent2:#b60037; --pale:#ffe0e9; }
+.c3  { --accent:#13a44e; --accent2:#006b39; --pale:#dcf9e7; }
+.c4  { --accent:#6940e8; --accent2:#3820ad; --pale:#ece5ff; }
+.c5  { --accent:#ff650d; --accent2:#d33b00; --pale:#ffeadb; }
+.c6  { --accent:#08a4c4; --accent2:#006d8a; --pale:#d8f6ff; }
+.c7  { --accent:#f51b78; --accent2:#b80053; --pale:#ffe0f0; }
+.c8  { --accent:#0877df; --accent2:#064ba3; --pale:#deefff; }
+.c9  { --accent:#7547d9; --accent2:#4a25a8; --pale:#ece5ff; }
+.c10 { --accent:#22a74b; --accent2:#08722f; --pale:#def8e4; }
+.c11 { --accent:#0868c6; --accent2:#064b98; --pale:#e0efff; }
+.c12 { --accent:#ef2445; --accent2:#b9002b; --pale:#ffe1e7; }
 
-/* Individual folder colours */
-
-.c1 {
-  --accent: #0878dc;
-  --accent2: #034b9d;
-  --pale: #dceeff;
-}
-
-.c2 {
-  --accent: #f21c50;
-  --accent2: #b60037;
-  --pale: #ffe0e9;
-}
-
-.c3 {
-  --accent: #13a44e;
-  --accent2: #006b39;
-  --pale: #dcf9e7;
-}
-
-.c4 {
-  --accent: #6940e8;
-  --accent2: #3820ad;
-  --pale: #ece5ff;
-}
-
-.c5 {
-  --accent: #ff650d;
-  --accent2: #d33b00;
-  --pale: #ffeadb;
-}
-
-.c6 {
-  --accent: #08a4c4;
-  --accent2: #006d8a;
-  --pale: #d8f6ff;
-}
-
-.c7 {
-  --accent: #f51b78;
-  --accent2: #b80053;
-  --pale: #ffe0f0;
-}
-
-.c8 {
-  --accent: #0877df;
-  --accent2: #064ba3;
-  --pale: #deefff;
-}
-
-.c9 {
-  --accent: #7547d9;
-  --accent2: #4a25a8;
-  --pale: #ece5ff;
-}
-
-.c10 {
-  --accent: #22a74b;
-  --accent2: #08722f;
-  --pale: #def8e4;
-}
-
-.c11 {
-  --accent: #0868c6;
-  --accent2: #064b98;
-  --pale: #e0efff;
-}
-
-.c12 {
-  --accent: #ef2445;
-  --accent2: #b9002b;
-  --pale: #ffe1e7;
-}
-
-a:focus-visible,
-input:focus-visible {
+a:focus-visible, input:focus-visible {
   outline: 3px solid #ffbd26;
   outline-offset: 3px;
 }
-
 @media (min-width: 1450px) {
-  .card {
-    padding: 18px 16px 15px;
-  }
+  .card { padding: 18px 16px 15px; }
 }
-
 @media (max-width: 1100px) {
-  .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
-
 @media (max-width: 760px) {
-  main {
-    padding: 18px 14px 28px;
-  }
-
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
-
-  .card {
-    padding: 13px 10px 12px;
-  }
-
-  .card-top {
-    gap: 7px;
-  }
-
+  main { padding: 18px 14px 28px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .card { padding: 13px 10px 12px; }
+  .card-top { gap: 7px; }
   .icon-circle {
     flex-basis: 54px;
     width: 54px;
@@ -473,63 +320,22 @@ input:focus-visible {
     font-size: 27px;
     margin-left: 30px;
   }
-
-  .card h3 {
-    font-size: 12px;
-  }
-
-  .card p {
-    font-size: 11px;
-  }
-
-  .arrow {
-    display: none;
-  }
+  .card h3 { font-size: 12px; }
+  .card p { font-size: 11px; }
+  .arrow { display: none; }
 }
-
 @media (max-width: 430px) {
-  h1 {
-    font-size: 23px;
-  }
-
-  .eyebrow {
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-
-  .header-links {
-    font-size: 11px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    padding: 16px 13px 13px;
-  }
-
-  .card h3 {
-    font-size: 14px;
-  }
-
-  .card p {
-    font-size: 12px;
-  }
-
-  .arrow {
-    display: flex;
-  }
+  h1 { font-size: 23px; }
+  .header-links { font-size: 11px; }
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: 16px 13px 13px; }
+  .card h3 { font-size: 14px; }
+  .card p { font-size: 12px; }
+  .arrow { display: flex; }
 }
-
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
     transition-duration: .01ms !important;
     animation-duration: .01ms !important;
   }
@@ -541,7 +347,6 @@ input:focus-visible {
 
 <header>
   <div class="header-content">
-    <p class="eyebrow">OFFICIAL ELECTION INFORMATION PORTAL</p>
     <h1>CHITTOOR DISTRICT POLICE</h1>
     <div class="election-label">ORDINARY ELECTIONS TO LOCAL BODIES</div>
     <p class="header-links">
@@ -574,7 +379,6 @@ input:focus-visible {
 
   <section class="grid" id="folderGrid">
 
-    <!-- CARD 1 -->
     <article class="card c1" data-search="L O DSRs law order daily situation reports">
       <div class="number">1</div>
       <div class="card-top">
@@ -588,7 +392,6 @@ input:focus-visible {
       </div>
     </article>
 
-    <!-- CARD 2 -->
     <article class="card c2" data-search="Annexure A B C seizures DSRs">
       <div class="number">2</div>
       <div class="card-top">
@@ -602,7 +405,6 @@ input:focus-visible {
       </div>
     </article>
 
-    <!-- CARD 3 -->
     <article class="card c3" data-search="BB schemes">
       <div class="number">3</div>
       <div class="card-top">
@@ -611,12 +413,11 @@ input:focus-visible {
       </div>
       <p>Reference documents and information on BB schemes.</p>
       <div class="card-actions">
-        <a class="open-link" href="https://drive.google.com/drive/folders/1HW8HWvPdOKgEsVGQ6etoMzh7t0oqKEQv" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
+        <a class="open-link" href="https://drive.google.com/drive/folders/1ruRDB6PP1D2n84mMgpLqLGeti-6yyN8T" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
         <span class="arrow">›</span>
       </div>
     </article>
 
-    <!-- CARD 4 -->
     <article class="card c4" data-search="Election petitions replies">
       <div class="number">4</div>
       <div class="card-top">
@@ -625,12 +426,11 @@ input:focus-visible {
       </div>
       <p>Election petitions, replies and related records.</p>
       <div class="card-actions">
-        <a class="open-link" href="https://drive.google.com/drive/folders/1SfLfuIZcoLbdJdbTy2LQRPuW8eZxbzio" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
+        <a class="open-link" href="https://drive.google.com/drive/folders/1HW8HWvPdOKgEsVGQ6etoMzh7t0oqKEQv" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
         <span class="arrow">›</span>
       </div>
     </article>
 
-    <!-- CARD 5 -->
     <article class="card c5" data-search="Nominations">
       <div class="number">5</div>
       <div class="card-top">
@@ -639,12 +439,11 @@ input:focus-visible {
       </div>
       <p>Nomination-related documents and records.</p>
       <div class="card-actions">
-        <a class="open-link" href="https://drive.google.com/drive/folders/1W0upkMrxlNz_PNwHm8UV_lkWCD49orPo" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
+        <a class="open-link" href="https://drive.google.com/drive/folders/1tUSJRHwuNqzyQagYeO_ajt8FPVza1cN2" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
         <span class="arrow">›</span>
       </div>
     </article>
 
-    <!-- CARD 6 -->
     <article class="card c6" data-search="Election memos replies correspondence">
       <div class="number">6</div>
       <div class="card-top">
@@ -653,12 +452,11 @@ input:focus-visible {
       </div>
       <p>Election memos and official correspondence.</p>
       <div class="card-actions">
-        <a class="open-link" href="https://drive.google.com/drive/folders/1tUSJRHwuNqzyQagYeO_ajt8FPVza1cN2" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
+        <a class="open-link" href="https://drive.google.com/drive/folders/1FeQuUvnJ23HUXCtzaHgmb43EDOM6F_9p" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
         <span class="arrow">›</span>
       </div>
     </article>
 
-    <!-- CARD 7 -->
     <article class="card c7" data-search="Paper clippings newspaper press coverage">
       <div class="number">7</div>
       <div class="card-top">
@@ -672,7 +470,6 @@ input:focus-visible {
       </div>
     </article>
 
-    <!-- CARD 8 -->
     <article class="card c8" data-search="Photos videos photographs election activities">
       <div class="number">8</div>
       <div class="card-top">
@@ -686,7 +483,6 @@ input:focus-visible {
       </div>
     </article>
 
-    <!-- CARD 9 -->
     <article class="card c9" data-search="Google Drive links resources">
       <div class="number">9</div>
       <div class="card-top">
@@ -695,12 +491,11 @@ input:focus-visible {
       </div>
       <p>Useful Google Drive links and resources.</p>
       <div class="card-actions">
-        <a class="open-link" href="https://drive.google.com/drive/folders/1FeQuUvnJ23HUXCtzaHgmb43EDOM6F_9p" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
+        <a class="open-link" href="https://drive.google.com/drive/folders/1SfLfuIZcoLbdJdbTy2LQRPuW8eZxbzio" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
         <span class="arrow">›</span>
       </div>
     </article>
 
-    <!-- CARD 10 -->
     <article class="card c10" data-search="Election notification">
       <div class="number">10</div>
       <div class="card-top">
@@ -714,7 +509,6 @@ input:focus-visible {
       </div>
     </article>
 
-    <!-- CARD 11 -->
     <article class="card c11" data-search="Old election cases miscellaneous">
       <div class="number">11</div>
       <div class="card-top">
@@ -723,12 +517,11 @@ input:focus-visible {
       </div>
       <p>Previous election cases and miscellaneous records.</p>
       <div class="card-actions">
-        <a class="open-link" href="https://drive.google.com/drive/folders/1Q1HxsIf1YT2sAVZKBDcUrzwJn-NLGOZP" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
+        <a class="open-link" href="https://drive.google.com/drive/folders/1A_GcugwV5ywgEQTZPdyPjU81t6FRitGi" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
         <span class="arrow">›</span>
       </div>
     </article>
 
-    <!-- CARD 12 -->
     <article class="card c12" data-search="ATRs L O Law Order Action Taken Reports">
       <div class="number">12</div>
       <div class="card-top">
@@ -766,10 +559,7 @@ searchInput.addEventListener("input", function () {
       card.textContent.toLowerCase().includes(query);
 
     card.hidden = !matches;
-
-    if (matches) {
-      count++;
-    }
+    if (matches) count++;
   });
 
   emptyMessage.style.display = count ? "none" : "block";
