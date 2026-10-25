@@ -4,356 +4,294 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#092b61">
+<meta name="theme-color" content="#f4f7fb">
 <title>Chittoor District Police | Election Portal</title>
 
 <style>
 :root {
-  --navy: #08275b;
-  --blue: #0866c5;
-  --gold: #ffc928;
+  --navy: #17366d;
   --ink: #102653;
   --muted: #5b6e8f;
-  --page: #f2f7ff;
+  --page: #f4f7fb;
+  --button: #e3efff;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   color: var(--ink);
-  background:
-    radial-gradient(ellipse at 8% 18%, #d9eaff 0, transparent 34%),
-    radial-gradient(ellipse at 94% 70%, #e2edff 0, transparent 32%),
-    var(--page);
+  background: var(--page);
 }
+
 header {
-  position: relative;
-  overflow: hidden;
   text-align: center;
-  color: white;
-  padding: 30px 16px 29px;
-  background:
-    radial-gradient(ellipse at 8% 100%, #0872c7 0, transparent 42%),
-    radial-gradient(ellipse at 100% 0%, #145fa9 0, transparent 42%),
-    linear-gradient(120deg, #07346c, #061b48 65%, #064b91);
-  border-bottom: 5px solid var(--gold);
-  box-shadow: 0 8px 26px #08275b20;
+  padding: 18px 16px;
+  background: #fff;
+  border-bottom: 1px solid #dce5f1;
 }
-header::before, header::after {
-  content: "";
-  position: absolute;
-  width: 42%;
-  height: 180px;
-  top: -100px;
-  border: 2px solid #f9c52e70;
-  border-radius: 50%;
-  transform: rotate(20deg);
-  pointer-events: none;
-}
-header::before { left: -15%; box-shadow: 0 12px 0 -5px #0875cf; }
-header::after { right: -15%; transform: rotate(-20deg); box-shadow: 0 12px 0 -5px #0875cf; }
-.header-content { position: relative; z-index: 1; }
 h1 {
-  font-size: clamp(25px, 4vw, 43px);
-  font-weight: 900;
   margin: 0;
-  letter-spacing: 1px;
-  text-wrap: balance;
+  color: var(--navy);
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 900;
 }
 .election-label {
   display: inline-block;
-  background: linear-gradient(100deg, #ffbd25, #ffe47c);
-  color: #082b62;
-  font-size: clamp(13px, 2vw, 21px);
-  font-weight: 900;
-  padding: 8px 26px;
-  border-radius: 25px;
-  margin: 12px 0 8px;
-  box-shadow: 0 4px 12px #00000020;
+  margin: 8px 0;
+  padding: 8px 24px;
+  background: var(--navy);
+  color: white;
+  border-radius: 8px;
+  font-size: clamp(13px, 1.6vw, 19px);
+  font-weight: 800;
 }
 .header-links {
+  margin: 4px 0 0;
+  color: #344d72;
   font-size: 13px;
   font-weight: 700;
-  margin: 4px 0 0;
-  color: #e9f3ff;
 }
-main { max-width: 1650px; margin: auto; padding: 24px 25px 38px; }
-.intro { text-align: center; margin-bottom: 17px; }
+
+main {
+  max-width: 1600px;
+  margin: auto;
+  padding: 22px 24px 30px;
+}
+.intro {
+  text-align: center;
+  margin-bottom: 15px;
+}
 .intro h2 {
-  font-size: clamp(22px, 2.5vw, 31px);
   margin: 0 0 7px;
+  color: var(--navy);
+  font-size: clamp(23px, 2.6vw, 34px);
   font-weight: 900;
-  color: #09285e;
 }
 .intro p {
-  font-size: 15px;
-  color: var(--muted);
   margin: 0;
-  line-height: 1.6;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
 }
+
 .tools {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 14px;
-  margin: 20px auto 25px;
+  justify-content: center;
+  gap: 12px;
   flex-wrap: wrap;
+  margin: 18px auto 22px;
 }
 .main-folder {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 13px 20px;
+  border-radius: 8px;
+  background: var(--navy);
+  color: #fff;
   text-decoration: none;
-  background: linear-gradient(100deg, #ffbd26, #ffe16c);
-  color: #09285e;
-  border: 1px solid #f0bc2f;
-  border-radius: 12px;
-  padding: 15px 23px;
-  font-size: 14px;
-  font-weight: 900;
-  box-shadow: 0 5px 12px #b88b2530;
-  transition: transform .2s, box-shadow .2s;
+  font-size: 13px;
+  font-weight: 800;
 }
-.main-folder:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px #b88b2545;
-}
+.main-folder:hover { background: #254a87; }
+
 .search-box {
   display: flex;
-  width: min(390px, 100%);
-  background: white;
-  border: 1px solid #d5e2f4;
-  border-radius: 12px;
+  width: min(380px, 100%);
+  background: #fff;
+  border: 1px solid #d4dfed;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 12px #234b7810;
 }
 .search-box input {
-  flex: 1;
+  width: 100%;
   min-width: 0;
+  padding: 13px;
   border: 0;
-  outline: 0;
-  padding: 14px;
+  outline: none;
   font-size: 14px;
-  background: transparent;
   color: var(--ink);
-}
-.search-box:focus-within {
-  border-color: #3b82d0;
-  box-shadow: 0 0 0 3px #0866c51a;
 }
 .search-symbol {
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #0876db, #064da4);
+  justify-content: center;
+  padding: 0 16px;
+  background: var(--navy);
   color: white;
-  border: 0;
-  padding: 0 18px;
-  font-size: 22px;
+  font-size: 20px;
 }
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 .card {
-  --accent: #0866c5;
-  --accent2: #064da4;
-  --pale: #e2f0ff;
-  position: relative;
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid #dce8f7;
-  border-radius: 18px;
-  padding: 18px 15px 14px;
-  min-width: 0;
+  --accent: #2675cf;
+  --pale: #e5f0ff;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 7px 20px #173b6912;
-  transition: transform .22s, box-shadow .22s, border-color .22s;
-}
-.card::after {
-  content: "";
-  position: absolute;
-  height: 4px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  opacity: .9;
+  min-width: 0;
+  padding: 13px;
+  background: white;
+  border: 1px solid #e0e7f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 7px #18345b0d;
+  transition: box-shadow .2s, transform .2s;
 }
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px #173b6922;
-  border-color: #c4d9f4;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px #18345b14;
 }
 .card-top {
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-height: 90px;
+  gap: 11px;
+  min-height: 65px;
 }
 .number {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: flex;
+  flex: 0 0 48px;
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: white;
-  font-size: 23px;
-  font-weight: 900;
-  display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0 0 19px 0;
-  box-shadow: 2px 3px 8px #18345b20;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 21px;
+  font-weight: 900;
 }
 .icon-circle {
-  flex: 0 0 70px;
-  width: 70px;
-  height: 70px;
-  margin-left: 32px;
-  border-radius: 50%;
-  background: var(--pale);
   display: flex;
+  flex: 0 0 58px;
+  width: 58px;
+  height: 58px;
   align-items: center;
   justify-content: center;
-  font-size: 34px;
+  border-radius: 50%;
+  background: var(--pale);
+  font-size: 29px;
 }
 .card h3 {
-  font-size: 14px;
+  margin: 0;
+  color: var(--navy);
+  font-size: 13px;
   line-height: 1.4;
   font-weight: 900;
-  margin: 0;
   overflow-wrap: anywhere;
 }
 .card p {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.55;
-  margin: 9px 0 15px;
-  min-height: 36px;
   flex: 1;
+  min-height: 34px;
+  margin: 8px 0 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
 }
 .card-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   margin-top: auto;
 }
 .open-link {
+  display: block;
   flex: 1;
-  min-width: 0;
+  padding: 11px 7px;
+  border-radius: 7px;
+  background: var(--button);
+  color: var(--navy);
   text-align: center;
   text-decoration: none;
-  color: white;
-  background: linear-gradient(100deg, var(--accent), var(--accent2));
-  padding: 13px 8px;
-  border-radius: 10px;
   font-size: 12px;
-  font-weight: 900;
-  box-shadow: 0 3px 8px #15355b1a;
-  transition: filter .2s, transform .2s;
+  font-weight: 800;
 }
-.open-link:hover {
-  filter: brightness(1.12);
-  transform: translateY(-1px);
-}
+.open-link:hover { background: #d2e4fc; }
 .arrow {
-  flex: 0 0 39px;
-  height: 39px;
   display: flex;
+  flex: 0 0 35px;
+  width: 35px;
+  height: 35px;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
   background: var(--pale);
   color: var(--accent);
-  font-size: 25px;
-  font-weight: bold;
-  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 800;
 }
 .card[hidden] { display: none; }
 .empty {
   display: none;
-  text-align: center;
-  padding: 30px;
+  padding: 24px;
   color: var(--muted);
-}
-footer {
   text-align: center;
-  color: #647897;
-  font-size: 12px;
-  padding: 8px 15px 25px;
 }
-.c1  { --accent:#0878dc; --accent2:#034b9d; --pale:#dceeff; }
-.c2  { --accent:#f21c50; --accent2:#b60037; --pale:#ffe0e9; }
-.c3  { --accent:#13a44e; --accent2:#006b39; --pale:#dcf9e7; }
-.c4  { --accent:#6940e8; --accent2:#3820ad; --pale:#ece5ff; }
-.c5  { --accent:#ff650d; --accent2:#d33b00; --pale:#ffeadb; }
-.c6  { --accent:#08a4c4; --accent2:#006d8a; --pale:#d8f6ff; }
-.c7  { --accent:#f51b78; --accent2:#b80053; --pale:#ffe0f0; }
-.c8  { --accent:#0877df; --accent2:#064ba3; --pale:#deefff; }
-.c9  { --accent:#7547d9; --accent2:#4a25a8; --pale:#ece5ff; }
-.c10 { --accent:#22a74b; --accent2:#08722f; --pale:#def8e4; }
-.c11 { --accent:#0868c6; --accent2:#064b98; --pale:#e0efff; }
-.c12 { --accent:#ef2445; --accent2:#b9002b; --pale:#ffe1e7; }
+
+.c1  { --accent:#2878cf; --pale:#e4f0ff; }
+.c2  { --accent:#dc4771; --pale:#fde8ef; }
+.c3  { --accent:#279b69; --pale:#e0f5e9; }
+.c4  { --accent:#8252d6; --pale:#eee6ff; }
+.c5  { --accent:#e98537; --pale:#fff0e2; }
+.c6  { --accent:#209db9; --pale:#e0f6fb; }
+.c7  { --accent:#d94b83; --pale:#fde7f0; }
+.c8  { --accent:#2878cf; --pale:#e4f0ff; }
+.c9  { --accent:#7654c5; --pale:#eee8ff; }
+.c10 { --accent:#29966b; --pale:#e0f5e9; }
+.c11 { --accent:#4276b8; --pale:#e6effb; }
+.c12 { --accent:#d95361; --pale:#fde9eb; }
+.c13 { --accent:#d6a12d; --pale:#fff4d9; }
+.c14 { --accent:#209b91; --pale:#dff5f1; }
 
 a:focus-visible, input:focus-visible {
-  outline: 3px solid #ffbd26;
-  outline-offset: 3px;
+  outline: 3px solid #e3b83f;
+  outline-offset: 2px;
 }
+footer {
+  padding: 12px;
+  color: #647897;
+  text-align: center;
+  font-size: 12px;
+}
+
 @media (min-width: 1450px) {
-  .card { padding: 18px 16px 15px; }
+  main { padding-left: 30px; padding-right: 30px; }
+  .grid { gap: 16px; }
+  .card { padding: 15px; }
 }
-@media (max-width: 1100px) {
-  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (max-width: 760px) {
-  main { padding: 18px 14px 28px; }
-  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-  .card { padding: 13px 10px 12px; }
-  .card-top { gap: 7px; }
-  .icon-circle {
-    flex-basis: 54px;
-    width: 54px;
-    height: 54px;
-    font-size: 27px;
-    margin-left: 30px;
-  }
-  .card h3 { font-size: 12px; }
-  .card p { font-size: 11px; }
-  .arrow { display: none; }
-}
-@media (max-width: 430px) {
-  h1 { font-size: 23px; }
-  .header-links { font-size: 11px; }
-  .grid { grid-template-columns: 1fr; }
-  .card { padding: 16px 13px 13px; }
+@media (max-width: 520px) {
+  main { padding: 16px 12px 24px; }
+  .grid { grid-template-columns: 1fr; gap: 12px; }
+  .card { padding: 13px; }
   .card h3 { font-size: 14px; }
   .card p { font-size: 12px; }
-  .arrow { display: flex; }
+  .arrow { flex-basis: 35px; }
+  .header-links { line-height: 1.8; }
 }
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
   *, *::before, *::after {
+    scroll-behavior: auto !important;
     transition-duration: .01ms !important;
-    animation-duration: .01ms !important;
   }
 }
 </style>
 </head>
 
 <body>
-
 <header>
-  <div class="header-content">
-    <h1>CHITTOOR DISTRICT POLICE</h1>
-    <div class="election-label">ORDINARY ELECTIONS TO LOCAL BODIES</div>
-    <p class="header-links">
-      Election Documents &nbsp; • &nbsp; Law &amp; Order
-      &nbsp; • &nbsp; Reports &nbsp; • &nbsp; Instructions
-    </p>
-  </div>
+  <div class="election-label">ORDINARY ELECTIONS TO LOCAL BODIES</div>
+  <p class="header-links">
+    Election Documents &nbsp; • &nbsp; Law &amp; Order
+    &nbsp; • &nbsp; Reports &nbsp; • &nbsp; Instructions
+  </p>
 </header>
 
 <main>
@@ -368,7 +306,6 @@ a:focus-visible, input:focus-visible {
        target="_blank" rel="noopener noreferrer">
       📁 &nbsp; OPEN MAIN ELECTION FOLDER ↗
     </a>
-
     <div class="search-box">
       <input id="folderSearch" type="search"
              placeholder="Search folders by name..."
@@ -380,8 +317,8 @@ a:focus-visible, input:focus-visible {
   <section class="grid" id="folderGrid">
 
     <article class="card c1" data-search="L O DSRs law order daily situation reports">
-      <div class="number">1</div>
       <div class="card-top">
+        <div class="number">1</div>
         <div class="icon-circle">📊</div>
         <h3>L &amp; O DSRs</h3>
       </div>
@@ -393,8 +330,8 @@ a:focus-visible, input:focus-visible {
     </article>
 
     <article class="card c2" data-search="Annexure A B C seizures DSRs">
-      <div class="number">2</div>
       <div class="card-top">
+        <div class="number">2</div>
         <div class="icon-circle">📑</div>
         <h3>ANNEXURE A, B &amp; C - SEIZURES DSRs</h3>
       </div>
@@ -406,8 +343,8 @@ a:focus-visible, input:focus-visible {
     </article>
 
     <article class="card c3" data-search="BB schemes">
-      <div class="number">3</div>
       <div class="card-top">
+        <div class="number">3</div>
         <div class="icon-circle">🗂️</div>
         <h3>BB SCHEMES</h3>
       </div>
@@ -419,8 +356,8 @@ a:focus-visible, input:focus-visible {
     </article>
 
     <article class="card c4" data-search="Election petitions replies">
-      <div class="number">4</div>
       <div class="card-top">
+        <div class="number">4</div>
         <div class="icon-circle">⚖️</div>
         <h3>ELECTION PETITIONS &amp; REPLIES</h3>
       </div>
@@ -432,8 +369,8 @@ a:focus-visible, input:focus-visible {
     </article>
 
     <article class="card c5" data-search="Nominations">
-      <div class="number">5</div>
       <div class="card-top">
+        <div class="number">5</div>
         <div class="icon-circle">📝</div>
         <h3>NOMINATIONS</h3>
       </div>
@@ -445,8 +382,8 @@ a:focus-visible, input:focus-visible {
     </article>
 
     <article class="card c6" data-search="Election memos replies correspondence">
-      <div class="number">6</div>
       <div class="card-top">
+        <div class="number">6</div>
         <div class="icon-circle">✉️</div>
         <h3>ELECTION MEMOS &amp; REPLIES</h3>
       </div>
@@ -458,8 +395,8 @@ a:focus-visible, input:focus-visible {
     </article>
 
     <article class="card c7" data-search="Paper clippings newspaper press coverage">
-      <div class="number">7</div>
       <div class="card-top">
+        <div class="number">7</div>
         <div class="icon-circle">📰</div>
         <h3>PAPER CLIPPINGS</h3>
       </div>
@@ -471,8 +408,8 @@ a:focus-visible, input:focus-visible {
     </article>
 
     <article class="card c8" data-search="Photos videos photographs election activities">
-      <div class="number">8</div>
       <div class="card-top">
+        <div class="number">8</div>
         <div class="icon-circle">📸</div>
         <h3>PHOTOS &amp; VIDEOS</h3>
       </div>
@@ -484,8 +421,8 @@ a:focus-visible, input:focus-visible {
     </article>
 
     <article class="card c9" data-search="Google Drive links resources">
-      <div class="number">9</div>
       <div class="card-top">
+        <div class="number">9</div>
         <div class="icon-circle">🔗</div>
         <h3>GOOGLE DRIVE LINKS</h3>
       </div>
@@ -497,8 +434,8 @@ a:focus-visible, input:focus-visible {
     </article>
 
     <article class="card c10" data-search="Election notification">
-      <div class="number">10</div>
       <div class="card-top">
+        <div class="number">10</div>
         <div class="icon-circle">📢</div>
         <h3>ELECTION NOTIFICATION</h3>
       </div>
@@ -510,8 +447,8 @@ a:focus-visible, input:focus-visible {
     </article>
 
     <article class="card c11" data-search="Old election cases miscellaneous">
-      <div class="number">11</div>
       <div class="card-top">
+        <div class="number">11</div>
         <div class="icon-circle">🗃️</div>
         <h3>OLD ELECTION CASES AND MISC</h3>
       </div>
@@ -523,14 +460,40 @@ a:focus-visible, input:focus-visible {
     </article>
 
     <article class="card c12" data-search="ATRs L O Law Order Action Taken Reports">
-      <div class="number">12</div>
       <div class="card-top">
+        <div class="number">12</div>
         <div class="icon-circle">📂</div>
         <h3>ATRs ON L&amp;O</h3>
       </div>
       <p>Action Taken Reports relating to Law &amp; Order.</p>
       <div class="card-actions">
         <a class="open-link" href="https://drive.google.com/drive/folders/1IoCn_Ah14-9NhXIR2JEoi3WTUIwRtQfI" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
+        <span class="arrow">›</span>
+      </div>
+    </article>
+
+    <article class="card c13" data-search="Incidents election-related incidents reports">
+      <div class="card-top">
+        <div class="number">13</div>
+        <div class="icon-circle">🚨</div>
+        <h3>INCIDENTS</h3>
+      </div>
+      <p>Election-related incidents and reports.</p>
+      <div class="card-actions">
+        <a class="open-link" href="PASTE_INCIDENTS_FOLDER_LINK_HERE" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
+        <span class="arrow">›</span>
+      </div>
+    </article>
+
+    <article class="card c14" data-search="SB Data Special Branch election records">
+      <div class="card-top">
+        <div class="number">14</div>
+        <div class="icon-circle">🛡️</div>
+        <h3>SB DATA</h3>
+      </div>
+      <p>Special Branch data and related election records.</p>
+      <div class="card-actions">
+        <a class="open-link" href="PASTE_SB_DATA_FOLDER_LINK_HERE" target="_blank" rel="noopener noreferrer">📁 &nbsp; Open Folder ↗</a>
         <span class="arrow">›</span>
       </div>
     </article>
@@ -565,6 +528,5 @@ searchInput.addEventListener("input", function () {
   emptyMessage.style.display = count ? "none" : "block";
 });
 </script>
-
 </body>
 </html>
