@@ -1,548 +1,625 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chittoor District Police | Election Portal</title>
+<title>Chittoor District Police | Election Management Portal</title>
 
 <style>
+:root {
+    --navy: #102b50;
+    --blue: #174b85;
+    --light-blue: #eaf2fb;
+    --text: #203047;
+    --muted: #718096;
+    --border: #e3eaf2;
+    --white: #ffffff;
+}
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(135deg,#eaf6ff,#dceeff,#f5faff);
-  color: #10366f;
-  min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f3f6fa;
+    color: var(--text);
 }
 
-header {
-  text-align: center;
-  padding: 25px 15px 18px;
-  background: linear-gradient(120deg,#ffffff,#e4f3ff);
-  border-bottom: 3px solid #2c88df;
+/* TOP NAVIGATION */
+.navbar {
+    background: var(--navy);
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.election-tag {
-  display: inline-block;
-  padding: 11px 28px;
-  background: linear-gradient(90deg,#1468bd,#348ee5);
-  color: white;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: .5px;
-  box-shadow: 0 5px 15px #9cccf0;
+.nav-title {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-nav {
-  margin: 14px 0;
+.nav-links {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
 }
 
-nav a {
-  color: #124a91;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  margin: 0 10px;
+.nav-links a {
+    color: #e5edf7;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
 }
 
-nav a:hover {
-  color: #e68a00;
+.nav-links a:hover {
+    color: #ffffff;
 }
 
-h1 {
-  font-size: clamp(25px,4vw,38px);
-  font-weight: 900;
-  letter-spacing: 1px;
-  color: #10458d;
-  margin: 8px 0;
+/* HEADER */
+.hero {
+    background: linear-gradient(120deg, #102b50, #1d5792);
+    color: white;
+    text-align: center;
+    padding: 45px 20px 40px;
 }
 
-.subtitle {
-  color: #55769f;
-  font-size: 15px;
+.hero .eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #c5ddf8;
+    margin-bottom: 13px;
 }
 
-.main-folder {
-  display: inline-block;
-  margin-top: 18px;
-  background: white;
-  border: 1px solid #c8e4ff;
-  border-radius: 30px;
-  padding: 12px 24px;
-  color: #10458d;
-  font-weight: 800;
-  text-decoration: none;
-  box-shadow: 0 4px 12px #d4eaff;
-  transition: .25s;
+.hero h1 {
+    font-size: clamp(25px, 4vw, 37px);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
 }
 
-.main-folder:hover {
-  background: #e5f3ff;
-  transform: translateY(-3px);
+.hero .subtitle {
+    font-size: 15px;
+    color: #e0ebf8;
+    margin-bottom: 25px;
 }
 
-.search-area {
-  max-width: 500px;
-  margin: 20px auto 10px;
-  padding: 0 12px;
+.main-folder-btn {
+    display: inline-block;
+    background: white;
+    color: var(--navy);
+    padding: 12px 24px;
+    border-radius: 7px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
 }
 
-.search-area input {
-  width: 100%;
-  padding: 14px 20px;
-  border: 1px solid #c5e1fa;
-  outline: none;
-  border-radius: 12px;
-  font-size: 14px;
-  box-shadow: 0 3px 12px #dcecff;
+.main-folder-btn:hover {
+    background: #eaf2fb;
+    transform: translateY(-2px);
 }
 
-.search-area input:focus {
-  border-color: #2585dc;
-  box-shadow: 0 0 0 3px #d4eaff;
-}
-
+/* MAIN CONTENT */
 .container {
-  max-width: 1450px;
-  margin: 20px auto 0;
-  padding: 0 22px 25px;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 32px 4%;
 }
 
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-size: 21px;
+    color: var(--navy);
+    font-weight: 750;
+}
+
+.section-heading p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+/* SEARCH */
+.search-box {
+    width: 100%;
+    max-width: 390px;
+    padding: 13px 16px;
+    border: 1px solid #d8e1ec;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background: white;
+    color: var(--text);
+}
+
+.search-box:focus {
+    border-color: #3979bb;
+    box-shadow: 0 0 0 3px #dceafa;
+}
+
+/* FOLDER GRID */
 .folder-grid {
-  display: grid;
-  grid-template-columns: repeat(4,minmax(0,1fr));
-  gap: 13px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
 }
 
 .folder-card {
-  --accent: #2686dc;
-  --soft: #e7f3ff;
-
-  background: rgba(255,255,255,.96);
-  border: 1px solid #d4e9fc;
-  border-left: 5px solid var(--accent);
-  border-radius: 15px;
-  min-height: 120px;
-  padding: 15px;
-  position: relative;
-  box-shadow: 0 5px 15px rgba(48,112,170,.10);
-  transition: .25s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 17px;
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.25s ease;
+    box-shadow: 0 3px 12px rgba(20, 48, 80, 0.035);
 }
 
 .folder-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 9px 22px rgba(40,105,170,.18);
-  border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 9px 24px rgba(20, 48, 80, 0.10);
+    border-color: #b8cde4;
 }
 
 .card-top {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.number {
-  min-width: 37px;
-  height: 37px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  background: linear-gradient(135deg,var(--accent),#153d83);
-  font-weight: 900;
-  font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
 }
 
 .folder-icon {
-  width: 45px;
-  height: 45px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--soft);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 23px;
+    width: 43px;
+    height: 43px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
 }
 
-.card-info {
-  min-width: 0;
+.folder-number {
+    font-size: 11px;
+    color: #8794a5;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-.card-info h3 {
-  font-size: 13px;
-  line-height: 1.4;
-  color: #103e80;
-  font-weight: 800;
+.folder-card h3 {
+    font-size: 14px;
+    line-height: 1.45;
+    color: #183653;
+    font-weight: 750;
+    margin-bottom: 8px;
+    min-height: 40px;
 }
 
-.card-info p {
-  font-size: 10px;
-  line-height: 1.5;
-  color: #6580a5;
-  margin-top: 4px;
-}
-
-.card-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
+.folder-card p {
+    font-size: 12px;
+    color: #78879a;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    flex-grow: 1;
 }
 
 .open-btn {
-  background: var(--soft);
-  color: #124b91;
-  text-decoration: none;
-  padding: 7px 12px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 800;
-  border: 0;
-  cursor: pointer;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    background: #edf4fc;
+    color: #174b85;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 .open-btn:hover {
-  background: var(--accent);
-  color: white;
+    background: #174b85;
+    color: white;
 }
 
-.arrow {
-  width: 29px;
-  height: 29px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--soft);
-  border-radius: 50%;
-  color: var(--accent);
-  font-size: 19px;
-  font-weight: 900;
+/* EMPTY SEARCH */
+.no-results {
+    display: none;
+    text-align: center;
+    padding: 40px 15px;
+    color: var(--muted);
+    font-size: 14px;
 }
 
-.empty {
-  display: none;
-  text-align: center;
-  padding: 35px;
-  color: #6782a4;
-}
-
+/* FOOTER */
 footer {
-  text-align: center;
-  padding: 17px 10px;
-  background: linear-gradient(90deg,#103b7b,#1769bb,#103b7b);
-  color: white;
-  font-size: 12px;
-  margin-top: 15px;
-  border-top: 4px solid #48a9ef;
+    background: #102b50;
+    color: #d9e5f3;
+    text-align: center;
+    padding: 22px 15px;
+    margin-top: 35px;
+    font-size: 12px;
+    line-height: 1.9;
 }
 
-footer span {
-  color: #bde4ff;
+footer strong {
+    color: white;
+    letter-spacing: 0.5px;
 }
 
-@media(max-width:1050px) {
-  .folder-grid {
-    grid-template-columns: repeat(3,minmax(0,1fr));
-  }
+/* RESPONSIVE DESIGN */
+@media (max-width: 1200px) {
+    .folder-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }
 
-@media(max-width:700px) {
-  .folder-grid {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-  }
-  .container {
-    padding: 0 10px 20px;
-  }
-  nav a {
-    margin: 0 5px;
-    font-size: 11px;
-  }
+@media (max-width: 900px) {
+    .folder-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
-@media(max-width:430px) {
-  .folder-grid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 650px) {
+    .folder-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .container {
+        padding: 24px 4%;
+    }
+
+    .folder-card {
+        padding: 15px 12px;
+    }
+
+    .navbar {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .search-box {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .folder-grid {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<nav class="navbar">
+    <div class="nav-title">CHITTOOR DISTRICT POLICE</div>
 
-  <div class="election-tag">
-    ORDINARY ELECTIONS TO LOCAL BODIES
-  </div>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#folders">Election Records</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
-  <nav>
-    <a href="#documents">Election Documents</a> •
-    <a href="#documents">Law & Order</a> •
-    <a href="#documents">Reports</a> •
-    <a href="#documents">Instructions</a>
-  </nav>
+<header class="hero" id="home">
+    <div class="eyebrow">ANDHRA PRADESH POLICE</div>
 
-  <h1>CHITTOOR DISTRICT POLICE</h1>
+    <h1>CHITTOOR DISTRICT POLICE</h1>
 
-  <p class="subtitle">
-    Select a folder below to access the relevant election records and documents.
-  </p>
+    <p class="subtitle">
+        Ordinary Elections to Local Bodies – Election Management Portal
+    </p>
 
-  <a class="main-folder"
-     href="https://drive.google.com/drive/folders/18iD8DHkdnLdXglFAYcqbKh3yZTQ0NAx2?usp=sharing"
-     target="_blank">
-    📁 &nbsp; MAIN ELECTION FOLDER &nbsp; ›
-  </a>
-
-  <div class="search-area">
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="🔎  Search election folders..."
-      oninput="searchFolders()">
-  </div>
-
+    <a
+        class="main-folder-btn"
+        href="https://drive.google.com/drive/folders/1Q1HxsIf1YT2sAVZKBDcUrzwJn-NLGOZP"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        📁 Open Main Election Folder
+    </a>
 </header>
 
-<main class="container" id="documents">
+<main class="container" id="folders">
 
-  <div class="folder-grid" id="folderGrid"></div>
+    <div class="section-heading">
+        <div>
+            <h2>Election Records & Documents</h2>
+            <p>Access Police Station reports, election records, proceedings and other documents.</p>
+        </div>
 
-  <div class="empty" id="noResults">
-    No matching folders found.
-  </div>
+        <input
+            type="search"
+            class="search-box"
+            id="searchInput"
+            placeholder="Search folders..."
+            oninput="searchFolders()"
+        >
+    </div>
+
+    <div class="folder-grid" id="folderGrid"></div>
+
+    <div class="no-results" id="noResults">
+        No matching folders found.
+    </div>
 
 </main>
 
-<footer>
-  Andhra Pradesh Police &nbsp; • &nbsp;
-  Chittoor District Police &nbsp; • &nbsp;
-  Election Management Portal
-  <br><br>
-  <span>Service &nbsp; | &nbsp; Security &nbsp; | &nbsp; Progress</span>
+<footer id="contact">
+    <strong>ANDHRA PRADESH POLICE • CHITTOOR DISTRICT POLICE</strong>
+    <br>
+    Election Management Portal
+    <br>
+    Service | Security | Progress
 </footer>
 
 <script>
 
-// MAIN ELECTION DRIVE FOLDER
+/* MAIN ELECTION FOLDER */
 const MAIN_FOLDER =
-"https://drive.google.com/drive/folders/18iD8DHkdnLdXglFAYcqbKh3yZTQ0NAx2?usp=sharing";
+"https://drive.google.com/drive/folders/1Q1HxsIf1YT2sAVZKBDcUrzwJn-NLGOZP";
 
-// FOLDER DETAILS
-// Add each individual Google Drive folder URL in the url field.
-// Empty URLs currently open the main Election Drive folder.
-
+/* ALL 17 INDIVIDUAL FOLDERS */
 const folders = [
- {
-  name:"L&O DSRs",
-  desc:"Law and Order daily situation reports and updates.",
-  icon:"📊",
-  color:"#2686dc",
-  soft:"#e4f2ff",
-  url:""
- },
- {
-  name:"Seizures DSRs",
-  desc:"Seizure DSRs and related records.",
-  icon:"📄",
-  color:"#c53d91",
-  soft:"#fce8f5",
-  url:""
- },
- {
-  name:"BB SCHEMES",
-  desc:"Reference documents and information on BB schemes.",
-  icon:"📁",
-  color:"#13a76a",
-  soft:"#e0f8ed",
-  url:""
- },
- {
-  name:"Election Petitions & Replies",
-  desc:"Election petitions, replies and related records.",
-  icon:"⚖️",
-  color:"#813bd2",
-  soft:"#f0e7ff",
-  url:""
- },
- {
-  name:"NOMINATIONS",
-  desc:"Nomination-related documents and records.",
-  icon:"📝",
-  color:"#ef7624",
-  soft:"#fff0e2",
-  url:""
- },
- {
-  name:"ELECTION MEMOS & REPLIES",
-  desc:"Election memos and official correspondence.",
-  icon:"✉️",
-  color:"#079ec0",
-  soft:"#e0f7fc",
-  url:""
- },
- {
-  name:"PAPER CLIPPINGS",
-  desc:"Newspaper clippings and election-related press coverage.",
-  icon:"📰",
-  color:"#d52e91",
-  soft:"#ffe8f4",
-  url:""
- },
- {
-  name:"PHOTOS & VIDEOS",
-  desc:"Photographs and video records of election activities.",
-  icon:"📸",
-  color:"#287ed4",
-  soft:"#e5f1ff",
-  url:""
- },
- {
-  name:"GOOGLE DRIVE LINKS",
-  desc:"Useful Google Drive links and resources.",
-  icon:"🔗",
-  color:"#8743cf",
-  soft:"#f0e7ff",
-  url:""
- },
- {
-  name:"ELECTION NOTIFICATION",
-  desc:"Election notifications and related documents.",
-  icon:"📢",
-  color:"#18a56a",
-  soft:"#e1f8ed",
-  url:""
- },
- {
-  name:"OLD ELECTION CASES AND MISC",
-  desc:"Previous election cases and miscellaneous records.",
-  icon:"🗃️",
-  color:"#1688ce",
-  soft:"#e5f3ff",
-  url:""
- },
- {
-  name:"REPLIES",
-  desc:"Election-related replies and records.",
-  icon:"📂",
-  color:"#e34d50",
-  soft:"#ffeded",
-  url:""
- },
- {
-  name:"INCIDENTS",
-  desc:"Election-related incidents and reports.",
-  icon:"🚨",
-  color:"#8236d2",
-  soft:"#f1e7ff",
-  url:""
- },
- {
-  name:"SB DATA",
-  desc:"Special Branch data and related election records.",
-  icon:"🛡️",
-  color:"#168c91",
-  soft:"#e1f7f4",
-  url:""
- },
- {
-  name:"COLLECTOR OFFICE",
-  desc:"Collector Office records and election-related documents.",
-  icon:"🏛️",
-  color:"#2478d1",
-  soft:"#e4f1ff",
-  url:""
- },
- {
-  name:"WP PETITION & REPLIES",
-  desc:"Writ Petition documents, court records and replies.",
-  icon:"⚖️",
-  color:"#e87924",
-  soft:"#fff0e2",
-  url:""
- },
- {
-  name:"POLLING AND RESULTS",
-  desc:"Polling arrangements, polling reports and election results.",
-  icon:"🗳️",
-  color:"#138b76",
-  soft:"#e1f8f1",
-  url:""
- }
+
+    {
+        name: "L&O DSRs",
+        desc: "Law and Order Daily Situation Reports.",
+        icon: "📋",
+        color: "#e8f1ff",
+        url: "https://drive.google.com/drive/folders/1W0upkMrxlNz_PNwHm8UV_lkWCD49orPo"
+    },
+
+    {
+        name: "SEIZURES DSRs",
+        desc: "Election-related seizure reports and details.",
+        icon: "🚨",
+        color: "#fff0e8",
+        url: "https://drive.google.com/drive/folders/1W7tjaYYOKzya8HCvJcHVm8R-OhcnA7dg"
+    },
+
+    {
+        name: "BB SCHEMES",
+        desc: "BB Schemes and related election records.",
+        icon: "📂",
+        color: "#eaf7ef",
+        url: "https://drive.google.com/drive/folders/1ruRDB6PP1D2n84mMgpLqLGeti-6yyN8T"
+    },
+
+    {
+        name: "ELECTION PETITIONS & REPLIES",
+        desc: "Election petitions, correspondence and replies.",
+        icon: "⚖️",
+        color: "#f2edff",
+        url: "https://drive.google.com/drive/folders/1HW8HWvPdOKgEsVGQ6etoMzh7t0oqKEQv"
+    },
+
+    {
+        name: "NOMINATIONS",
+        desc: "Nomination-related documents and records.",
+        icon: "📝",
+        color: "#fff6df",
+        url: "https://drive.google.com/drive/folders/1tUSJRHwuNqzyQagYeO_ajt8FPVza1cN2"
+    },
+
+    {
+        name: "ELECTION MEMOS & REPLIES",
+        desc: "Official election memos and action taken replies.",
+        icon: "📑",
+        color: "#e9f5fb",
+        url: "https://drive.google.com/drive/folders/1FeQuUvnJ23HUXCtzaHgmb43EDOM6F_9p"
+    },
+
+    {
+        name: "PAPER CLIPPINGS",
+        desc: "Newspaper publications and media clippings.",
+        icon: "📰",
+        color: "#fff0ed",
+        url: "https://drive.google.com/drive/folders/1RCybM9fmUk_1zwtnXEDX8Mv2kpJvEh0f"
+    },
+
+    {
+        name: "PHOTOS & VIDEOS",
+        desc: "Election-related photographs and video records.",
+        icon: "📸",
+        color: "#f0edff",
+        url: "https://drive.google.com/drive/folders/1VFjDiiI6BA0NH6c7r6gDs85Z-t2EQxHi"
+    },
+
+    {
+        name: "GOOGLE DRIVE LINKS",
+        desc: "Important Google Drive folders and reference links.",
+        icon: "🔗",
+        color: "#e8f5ff",
+        url: "https://drive.google.com/drive/folders/1SfLfuIZcoLbdJdbTy2LQRPuW8eZxbzio"
+    },
+
+    {
+        name: "ELECTION NOTIFICATION",
+        desc: "Election notifications and official instructions.",
+        icon: "📢",
+        color: "#fff4e5",
+        url: "https://drive.google.com/drive/folders/1i234eCUhyaxHtC6biftYcMkRyDbbu1td"
+    },
+
+    {
+        name: "OLD ELECTION CASES AND MISC",
+        desc: "Previous election cases and miscellaneous records.",
+        icon: "🗃️",
+        color: "#edf0f5",
+        url: "https://drive.google.com/drive/folders/1A_GcugwV5ywgEQTZPdyPjU81t6FRitGi"
+    },
+
+    {
+        name: "REPLIES",
+        desc: "Replies, reports and official correspondence.",
+        icon: "📨",
+        color: "#eaf7f4",
+        url: "https://drive.google.com/drive/folders/1IoCn_Ah14-9NhXIR2JEoi3WTUIwRtQfI"
+    },
+
+    {
+        name: "INCIDENTS",
+        desc: "Election-related incidents and reports.",
+        icon: "⚠️",
+        color: "#fff0e8",
+        url: "https://drive.google.com/drive/folders/1oFCmjcW347VCt_PRUZQPqnOoYbutAC68"
+    },
+
+    {
+        name: "SB DATA",
+        desc: "Special Branch information and election data.",
+        icon: "🔍",
+        color: "#eaf0ff",
+        url: "https://drive.google.com/drive/folders/1J3HJKDi7WgrYi18CsPgNxrdu0naYB1_s"
+    },
+
+    {
+        name: "COLLECTOR OFFICE",
+        desc: "Collector Office correspondence and records.",
+        icon: "🏛️",
+        color: "#f2edff",
+        url: "https://drive.google.com/drive/folders/1GsgbZEI39NZq1G9BDrMYFcfVdIHkp5bk"
+    },
+
+    {
+        name: "WP PETITION & REPLIES",
+        desc: "Writ petitions, counter-affidavits and replies.",
+        icon: "⚖️",
+        color: "#eaf7ef",
+        url: "https://drive.google.com/drive/folders/1EVDdGAawC_RZZtx50biwn4jSepE0HjAP"
+    },
+
+    {
+        name: "POLLING AND RESULTS",
+        desc: "Polling arrangements, polling reports and election results.",
+        icon: "🗳️",
+        color: "#fff5df",
+        url: "https://drive.google.com/drive/folders/18iD8DHkdnLdXglFAYcqbKh3yZTQ0NAx2"
+    }
+
 ];
 
+
+/* DISPLAY FOLDERS */
 function displayFolders(data) {
 
- const grid = document.getElementById("folderGrid");
- grid.innerHTML = "";
+    const grid = document.getElementById("folderGrid");
+    const noResults = document.getElementById("noResults");
 
- data.forEach(folder => {
+    grid.innerHTML = "";
 
-   const originalNumber = folders.indexOf(folder) + 1;
+    noResults.style.display = data.length ? "none" : "block";
 
-   const card = document.createElement("div");
-   card.className = "folder-card";
+    data.forEach(folder => {
 
-   card.style.setProperty("--accent",folder.color);
-   card.style.setProperty("--soft",folder.soft);
+        const originalIndex = folders.indexOf(folder);
 
-   const link = folder.url || MAIN_FOLDER;
+        const card = document.createElement("div");
+        card.className = "folder-card";
 
-   card.innerHTML = `
-     <div class="card-top">
-       <div class="number">${originalNumber}</div>
-       <div class="folder-icon">${folder.icon}</div>
-       <div class="card-info">
-         <h3>${originalNumber}. ${folder.name}</h3>
-         <p>${folder.desc}</p>
-       </div>
-     </div>
+        const top = document.createElement("div");
+        top.className = "card-top";
 
-     <div class="card-bottom">
-       <a class="open-btn"
-          href="${link}"
-          target="_blank"
-          rel="noopener noreferrer">
-          📁 &nbsp; Open Folder ›
-       </a>
-       <div class="arrow">›</div>
-     </div>
-   `;
+        const icon = document.createElement("div");
+        icon.className = "folder-icon";
+        icon.style.background = folder.color;
+        icon.textContent = folder.icon;
 
-   grid.appendChild(card);
+        const number = document.createElement("div");
+        number.className = "folder-number";
+        number.textContent = "FOLDER " + String(originalIndex + 1).padStart(2, "0");
 
- });
+        top.appendChild(icon);
+        top.appendChild(number);
 
- document.getElementById("noResults").style.display =
-   data.length === 0 ? "block" : "none";
+        const heading = document.createElement("h3");
+        heading.textContent = folder.name;
+
+        const description = document.createElement("p");
+        description.textContent = folder.desc;
+
+        const button = document.createElement("button");
+        button.className = "open-btn";
+        button.type = "button";
+        button.textContent = "OPEN FOLDER →";
+
+        button.addEventListener("click", function() {
+            openFolder(folder.url, folder.name);
+        });
+
+        card.appendChild(top);
+        card.appendChild(heading);
+        card.appendChild(description);
+        card.appendChild(button);
+
+        grid.appendChild(card);
+    });
 }
 
+
+/* OPEN ONLY THE SELECTED FOLDER */
+function openFolder(url, folderName) {
+
+    if (
+        typeof url === "string" &&
+        url.startsWith("https://drive.google.com/drive/folders/")
+    ) {
+        window.open(url, "_blank", "noopener,noreferrer");
+    } else {
+        alert(
+            "The individual Google Drive link for " +
+            folderName +
+            " is not available."
+        );
+    }
+}
+
+
+/* SEARCH */
 function searchFolders() {
 
- const query = document
-   .getElementById("searchInput")
-   .value.toLowerCase()
-   .trim();
+    const searchValue = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
 
- const filtered = folders.filter(folder =>
-   folder.name.toLowerCase().includes(query) ||
-   folder.desc.toLowerCase().includes(query)
- );
+    const filtered = folders.filter(folder =>
+        folder.name.toLowerCase().includes(searchValue) ||
+        folder.desc.toLowerCase().includes(searchValue)
+    );
 
- displayFolders(filtered);
+    displayFolders(filtered);
 }
 
+
+/* INITIAL DISPLAY */
 displayFolders(folders);
 
 </script>
